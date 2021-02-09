@@ -9,7 +9,10 @@ import com.example.Jeff_Pesos_Simulator.generated.World;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.OutputStream;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -29,7 +32,8 @@ public class Services {
        try {
            JAXBContext cont = JAXBContext.newInstance(World.class);
            Unmarshaller u = cont.createUnmarshaller();
-           world = (World) u.unmarshal(new File("world.xml"));
+           InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
+           world = (World) u.unmarshal(input);
        }
        catch (JAXBException e) {
        }
@@ -38,6 +42,7 @@ public class Services {
     }
     
     public void saveWorldToXml(World world) throws FileNotFoundException {
+        
         try {
             JAXBContext cont = JAXBContext.newInstance(World.class);
             Marshaller m = cont.createMarshaller();
@@ -48,9 +53,9 @@ public class Services {
        }
     }
     
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public World getWorld() {      
        
        return readWorldFromXml();
-    }
-    
+    }   
 }

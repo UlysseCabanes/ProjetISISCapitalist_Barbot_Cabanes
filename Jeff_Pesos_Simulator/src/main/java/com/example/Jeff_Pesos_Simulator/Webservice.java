@@ -15,17 +15,17 @@ import javax.ws.rs.core.Response;
  *
  * @author ulyss
  */
-@Path("generic")
-public class Webservices {
+@Path("/generic")
+public class Webservice {
          
     Services services;
 
-    public Webservices() {
+    public Webservice() {
         services = new Services();
     }
 
     @GET
-    @Path("world")
+    @Path("/world")
     @Produces(MediaType.APPLICATION_XML)
     public Response getWorld(){
         return Response.ok(services.getWorld()).build();
