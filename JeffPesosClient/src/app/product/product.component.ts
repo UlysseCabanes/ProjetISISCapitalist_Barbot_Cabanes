@@ -8,7 +8,7 @@ import { Product } from '../world';
 })
 export class ProductComponent implements OnInit {
 
-  product: Product;
+  product: Product = new Product();
 
   constructor() { }
 
@@ -19,4 +19,3 @@ export class ProductComponent implements OnInit {
  this.product = value;
  }
  }
-}

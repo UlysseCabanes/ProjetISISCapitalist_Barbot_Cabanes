@@ -34,16 +34,16 @@ export class Product {
     quantite: number = 0;
     timeleft: number = 0;
     managerUnlocked: boolean = false;
-    palliers : { "pallier" : Pallier[]};
+    palliers : { "pallier": Pallier[]; } | undefined;
 
 }
 
 export class Pallier {
-    name: string;
-    logo: string;
-    seuil: number;
-    idcible: number;
-    ratio: number;
-    typeratio: string;
-    unlocked: boolean;
+    name: string = "";
+    logo: string = "";
+    seuil: number = 0;
+    idcible: number = 0;
+    ratio: number = 0;
+    typeratio: string = "";
+    unlocked: boolean = false;
 }
