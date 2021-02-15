@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { World, Product } from '../world';
+import { Product } from '../world';
 
 @Component({
   selector: 'app-product',
@@ -9,8 +9,8 @@ import { World, Product } from '../world';
 export class ProductComponent implements OnInit {
 
   product: Product = new Product();
+  server = "http://localhost:8080/";
 
-  world : World = new World();
   constructor() { }
 
   ngOnInit(): void {
@@ -19,8 +19,4 @@ export class ProductComponent implements OnInit {
  set prod(value: Product) {
  this.product = value;
  }
- @Input()
- set worldvalue(value: World) {
-  this.world = value;
-  }
  }

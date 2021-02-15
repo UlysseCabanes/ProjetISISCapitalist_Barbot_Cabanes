@@ -4,7 +4,8 @@
             <img class="worldLogo" [attr.src]="server+world.logo" />
         </span>
     </div>
-        <div> argent </div>
+        <div> <span [innerHTML]="world.money | bigvalue"> </span>
+        </div>
         <div> multiplicateur </div>
         <div> ID du joueur </div>
     </div>
@@ -23,8 +24,11 @@
             (click)="showManagers = true">Managers</button>
     </div>
     <div class="product">
-        <div> premier produit </div>
-        <div> second produit </div>
+        <div> <app-product [prod]="world.products.product[0]"
+            class="product col-md-6"></app-product>
+        </div>
+        <div> <app-product [prod]="world.products.product[1]"
+            class="product col-md-6"></app-product> </div>
         <div> troisième produit </div>
         <div> quatrième produit </div>
         <div> cinquième produit </div>

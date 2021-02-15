@@ -1,2 +1,6 @@
-<app-product [prod]="world.products.product[0]"
-class="product col-md-6"></app-product>
+<div class="product">
+    <span id=productname> {{product.name}} </span>
+    <span>
+        <img [attr.src]="server+product.logo" />
+    </span>
+</div>
