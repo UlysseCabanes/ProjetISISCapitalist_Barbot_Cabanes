@@ -23,6 +23,10 @@ export class AppComponent {
   showManagers: boolean = false;
 
   hireManager(manager: Pallier) {
+    if (this.world.money >= manager.seuil) {
+      this.world.money -= manager.seuil;
+      manager.unlocked = true;
 
+    }
   };
 }

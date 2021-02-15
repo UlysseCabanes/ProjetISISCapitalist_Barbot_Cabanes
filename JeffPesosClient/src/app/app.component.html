@@ -1,7 +1,7 @@
 <div class="header">
-    <div> <span id="worldname"> {{world.name}} </span>
+    <div>
         <span>
-            <img [attr.src]="server+world.logo" />
+            <img class="worldLogo" [attr.src]="server+world.logo" />
         </span>
     </div>
         <div> argent </div>
@@ -34,7 +34,7 @@
 
 <div *ngIf="showManagers" class="modal">
     <div>
-        <h1 class="title">Star ars world managers :</h1>
+        <h1 class="title">Star Wars world managers :</h1>
     </div>
     <div>
         <div *ngFor="let manager of world.managers.pallier">
