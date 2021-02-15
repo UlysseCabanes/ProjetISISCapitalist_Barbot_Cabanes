@@ -34,7 +34,11 @@ export class Product {
     quantite: number = 0;
     timeleft: number = 0;
     managerUnlocked: boolean = false;
-    palliers : { "pallier": Pallier[]; } | undefined;
+    palliers : { "pallier": Pallier[]; };
+
+    constructor() {
+        this.palliers = { "pallier":[ ] };
+    }
 
 }
 
