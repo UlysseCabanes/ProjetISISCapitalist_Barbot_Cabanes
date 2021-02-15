@@ -19,4 +19,10 @@ export class AppComponent {
     this.world = world;
     });
   }
+
+  showManagers: boolean = false;
+
+  hireManager(manager: Pallier) {
+
+  };
 }
