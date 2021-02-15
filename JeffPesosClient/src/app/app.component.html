@@ -19,3 +19,25 @@
       <div> sixième produit </div>
     </div>
   </div>
+
+  <div *ngIf="showManagers" class="modal">
+    <div>
+        <h1 class="title">Managers make you feel better !</h1>
+    </div>
+    <div>
+        <div *ngFor="let manager of world.managers.pallier">
+            <div *ngIf="!manager.unlocked" class="managerslayout">
+                <div>
+                    <div class="logo"><img class="round" [attr.src]="server+manager.logo" /> </div>
+                </div>
+                <div>
+                    <div class="managername"> {{ manager.name}} </div>
+                    <div class="managercible"> {{ world.products.product[manager.idcible-1].name }} </div>
+                    <div class="managercost"> {{ manager.seuil}} </div>
+                </div>
+                <div>
+                    <div class="hirebutton" (click)="hireManager(manager)"
+                        [ngClass]="{'selectable' : (world.money >= manager.seuil)}">Hire !</div>
+                </div>
+            </div>
+        </div>
