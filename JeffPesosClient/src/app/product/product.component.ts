@@ -10,6 +10,7 @@ export class ProductComponent implements OnInit {
 
   product: Product = new Product();
 
+  world : World = new World();
   constructor() { }
 
   ngOnInit(): void {
@@ -18,4 +19,8 @@ export class ProductComponent implements OnInit {
  set prod(value: Product) {
  this.product = value;
  }
+ @Input()
+ set worldvalue(value: World) {
+  this.world = value;
+  }
  }
