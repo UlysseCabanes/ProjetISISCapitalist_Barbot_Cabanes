@@ -20,6 +20,7 @@
     border: solid; 
     top:10%; /* a 10% du haut */ 
     left:20%; /* a 20% de la gauche */ 
+    padding: 10px;
 }
 .round { 
     width: 100px; 
@@ -37,5 +38,18 @@
 }
 .worldLogo {
     height: 100px;
-    width: 100px;
+    width: 300px;
+}
+header {
+    display: flex;
+}
+/* Managers */
+.managersLayout {
+    display: flex;
+}
+.managersAttributes {
+    margin: auto 0 auto 0;
+}
+.hireButton {
+    margin: auto 0 auto 0;
 }

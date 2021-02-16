@@ -5,8 +5,8 @@ Star Wars World
 
 <world xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='../java/com/example/Jeff_Pesos_Simulator/worldSchema.xsd'>
   <name>StarWars</name>
-  <logo>icones/starWarsLogo.png</logo>
-  <money>0</money>
+  <logo>icones/legoStarWarsLogo.png</logo>
+  <money>1000000</money>
   <score>0</score>
   <totalangels>0</totalangels>
   <activeangels>0</activeangels>
@@ -17,7 +17,7 @@ Star Wars World
     <product>
       <id>1</id>
       <name>Blaster</name>
-      <logo>icones/blaster.jpeg</logo>
+      <logo>icones/blaster.jpg</logo>
       <cout>4</cout>
       <croissance>1.07</croissance>
       <revenu>1</revenu>
@@ -214,7 +214,7 @@ Star Wars World
   <angelupgrades>
     <pallier>
       <name>anakin</name>
-      <logo>icones/anakin.jpg</logo>
+      <logo>icones/anakinForceGhost.jpg</logo>
       <seuil>100</seuil>
       <idcible>0</idcible>
       <ratio>1.5</ratio>
@@ -222,8 +222,8 @@ Star Wars World
       <unlocked>false</unlocked>
     </pallier>
     <pallier>
-      <name>maceWindu</name>
-      <logo>icones/maceWindu.png</logo>
+      <name>obi-wan</name>
+      <logo>icones/obi-wanForceGhost.jpg</logo>
       <seuil>250</seuil>
       <idcible>0</idcible>
       <ratio>0.5</ratio>
@@ -232,7 +232,7 @@ Star Wars World
     </pallier>
     <pallier>
       <name>yoda</name>
-      <logo>icones/yoda.jpeg</logo>
+      <logo>icones/yodaForceGhost.jpeg</logo>
       <seuil>500</seuil>
       <idcible>0</idcible>
       <ratio>5</ratio>
@@ -243,7 +243,7 @@ Star Wars World
   <managers>
     <pallier>
       <name>Han Solo</name>
-      <logo>icones/hanSolo.jpeg</logo>
+      <logo>icones/hanSolo.jpg</logo>
       <seuil>500</seuil>
       <idcible>1</idcible>
       <ratio>1.25</ratio>
@@ -251,8 +251,8 @@ Star Wars World
       <unlocked>false</unlocked>
     </pallier>
     <pallier>
-      <name>Obi-Wan</name>
-      <logo>icones/obi-wan.png</logo>
+      <name>Mace Windu</name>
+      <logo>icones/maceWindu.jpg</logo>
       <seuil>1000</seuil>
       <idcible>2</idcible>
       <ratio>1.25</ratio>

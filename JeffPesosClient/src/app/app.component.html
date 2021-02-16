@@ -12,7 +12,7 @@
 </div>
 
 <div class="main">
-    <div> liste des boutons de menu
+    <div> Menu
         <br>
         <button class="openbutton" mat-raised-button color="primary" (click)="showManagers = true">Managers</button>
     </div>
@@ -36,17 +36,17 @@
     </div>
     <div>
         <div *ngFor="let manager of world.managers.pallier">
-            <div *ngIf="!manager.unlocked" class="managerslayout">
+            <div *ngIf="!manager.unlocked" class="managersLayout">
                 <div>
                     <div class="logo"><img class="round" [attr.src]="server+manager.logo" /> </div>
                 </div>
-                <div>
+                <div class="managersAttributes">
                     <div class="managername"> {{ manager.name}} </div>
                     <div class="managercible"> {{ world.products.product[manager.idcible-1].name }} </div>
                     <div class="managercost"> {{ manager.seuil}} </div>
                 </div>
                 <div>
-                    <div class="hirebutton" (click)="hireManager(manager)"
+                    <div class="hireButton" (click)="hireManager(manager)"
                         [ngClass]="{'selectable' : (world.money >= manager.seuil)}">Hire !</div>
                 </div>
             </div>
