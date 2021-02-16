@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.example.Jeff_Pesos_Simulator.JeffPesosSimulatorApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.168 s <<< FAILURE! - in com.example.Jeff_Pesos_Simulator.JeffPesosSimulatorApplicationTests
-contextLoads  Time elapsed: 0 s  <<< ERROR!
-java.lang.NoClassDefFoundError: org/springframework/boot/ApplicationContextFactory
-Caused by: java.lang.ClassNotFoundException: org.springframework.boot.ApplicationContextFactory
-

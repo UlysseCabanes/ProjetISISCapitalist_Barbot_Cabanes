@@ -4,31 +4,25 @@
             <img class="worldLogo" [attr.src]="server+world.logo" />
         </span>
     </div>
-        <div> <span [innerHTML]="world.money | bigvalue"> </span>
-        </div>
-        <div> multiplicateur </div>
-        <div> ID du joueur </div>
+    <div>
+        <span [innerHTML]="world.money | bigvalue"> </span>
     </div>
-    <div class="main">
-        <div> liste des boutons de menu </div>
-        <div class="product">
-    <div> argent </div>
     <div> multiplicateur </div>
     <div> ID du joueur </div>
 </div>
 
 <div class="main">
-    <div> liste des boutons de menu 
+    <div> liste des boutons de menu
         <br>
-        <button class="openbutton" mat-raised-button color="primary"
-            (click)="showManagers = true">Managers</button>
+        <button class="openbutton" mat-raised-button color="primary" (click)="showManagers = true">Managers</button>
     </div>
     <div class="product">
-        <div> <app-product [prod]="world.products.product[0]"
-            class="product col-md-6"></app-product>
+        <div>
+            <app-product [prod]="world.products.product[0]" class="product col-md-6"></app-product>
         </div>
-        <div> <app-product [prod]="world.products.product[1]"
-            class="product col-md-6"></app-product> </div>
+        <div>
+            <app-product [prod]="world.products.product[1]" class="product col-md-6"></app-product>
+        </div>
         <div> troisième produit </div>
         <div> quatrième produit </div>
         <div> cinquième produit </div>
