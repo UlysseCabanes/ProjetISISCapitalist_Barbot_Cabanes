@@ -18,10 +18,12 @@
     </div>
     <div class="product">
         <div>
-            <app-product [prod]="world.products.product[0]" class="product col-md-6"></app-product>
+            <app-product [prod]="world.products.product[0]" class="product col-md-6"
+                (notifyProduction)="onProductionDone($event)"></app-product>
         </div>
         <div>
-            <app-product [prod]="world.products.product[1]" class="product col-md-6"></app-product>
+            <app-product [prod]="world.products.product[1]" class="product col-md-6"
+                (notifyProduction)="onProductionDone($event)"></app-product>
         </div>
         <div> troisième produit </div>
         <div> quatrième produit </div>

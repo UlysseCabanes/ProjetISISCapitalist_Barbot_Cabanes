@@ -29,4 +29,8 @@ export class AppComponent {
       this.world.products.product[manager.idcible-1].managerUnlocked = true;
     }
   };
+
+  onProductionDone(p : Product){
+    this.world.money += p.revenu;
+  }
 }
