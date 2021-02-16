@@ -7,8 +7,11 @@
     <div>
         <span [innerHTML]="world.money | bigvalue"> </span>
     </div>
-    <div> multiplicateur </div>
     <div> ID du joueur </div>
+    <div>
+        Multiplicateur :
+        <button id="multiButton" (click) = "cycle()"> {{qtmulti}} </button>
+    </div>
 </div>
 
 <div class="main">
@@ -19,11 +22,11 @@
     </div>
     <div class="product">
         <div>
-            <app-product [prod]="world.products.product[0]" class="product col-md-6"
+            <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[0]" class="product col-md-6"
                 (notifyProduction)="onProductionDone($event)"></app-product>
         </div>
         <div>
-            <app-product [prod]="world.products.product[1]" class="product col-md-6"
+            <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[1]" class="product col-md-6"
                 (notifyProduction)="onProductionDone($event)"></app-product>
         </div>
         <div> troisième produit </div>

@@ -6,7 +6,7 @@ Star Wars World
 <world xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='../java/com/example/Jeff_Pesos_Simulator/worldSchema.xsd'>
   <name>StarWars</name>
   <logo>icones/legoStarWarsLogo.png</logo>
-  <money>500</money>
+  <money>0</money>
   <score>0</score>
   <totalangels>0</totalangels>
   <activeangels>0</activeangels>
@@ -21,7 +21,7 @@ Star Wars World
       <cout>4</cout>
       <croissance>1.07</croissance>
       <revenu>1</revenu>
-      <vitesse>500</vitesse>
+      <vitesse>1000</vitesse>
       <quantite>1</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -63,7 +63,7 @@ Star Wars World
       <cout>12</cout>
       <croissance>1.07</croissance>
       <revenu>3</revenu>
-      <vitesse>1000</vitesse>
+      <vitesse>2000</vitesse>
       <quantite>1</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>

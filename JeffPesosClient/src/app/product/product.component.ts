@@ -12,6 +12,8 @@ export class ProductComponent implements OnInit {
   server = "http://localhost:8080/";
   progressbarvalue = 0;
   lastUpdate = 0;
+  _qtmulti="";
+  _money = 0;
 
   constructor() { }
 
@@ -19,13 +21,24 @@ export class ProductComponent implements OnInit {
     setInterval(() => { this.calcScore(); }, 100);
     this.progressbarvalue = 0;
   }
-  
+
   @Output() notifyProduction: EventEmitter<Product> = new
-  EventEmitter<Product>();
+    EventEmitter<Product>();
 
   @Input()
   set prod(value: Product) {
     this.product = value;
+  }
+
+  @Input()
+  set money(value: number) {
+    this._money = value;
+  }
+
+  @Input()
+  set qtmulti(value: string) {
+    this._qtmulti = value;
+    if (this._qtmulti && this.product) this.calcMaxCanBuy();
   }
   startFabrication() {
     this.product.timeleft = this.product.vitesse;
@@ -44,5 +57,8 @@ export class ProductComponent implements OnInit {
         this.progressbarvalue = ((this.product.vitesse - this.product.timeleft) / this.product.vitesse) * 100;
       }
     }
+  }
+  calcMaxCanBuy(){
+
   }
 }
