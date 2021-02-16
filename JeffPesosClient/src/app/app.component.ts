@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { World, Pallier, Product } from './world';
 import { RestserviceService } from './restservice.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
   world: World = new World();
   server: string;
   title = 'JeffPesosClient';
-  constructor(private service: RestserviceService) {
+  constructor(private service: RestserviceService, private snackBar: MatSnackBar) {
     this.server = service.getServer;
     service.getWorld().then(
     world => {
@@ -27,8 +28,13 @@ export class AppComponent {
       this.world.money -= manager.seuil;
       manager.unlocked = true;
       this.world.products.product[manager.idcible-1].managerUnlocked = true;
+      this.hireMessage("Vous avez engagé " + manager.name + " comme manager !");
     }
   };
+
+  hireMessage(message : string) : void { 
+    this.snackBar.open(message, "", { duration : 5000 })
+  }
 
   onProductionDone(p : Product){
     this.world.money += p.revenu;

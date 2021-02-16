@@ -46,10 +46,29 @@ header {
 /* Managers */
 .managersLayout {
     display: flex;
+    width: 400px;
+    margin-top: 10px;
 }
 .managersAttributes {
-    margin: auto 0 auto 0;
+    margin: auto;
+}
+.managerName, .managerCible, .managerCost {
+    margin: 0 auto 0 auto;
+    width: fit-content;
 }
 .hireButton {
     margin: auto 0 auto 0;
+    border: solid black 1px;
+    padding: 5px;
+    cursor: default;
+}
+.closeButton {
+    cursor: pointer;
+}
+/* Menu */
+.managersButton {
+    cursor: pointer;
+}
+.selectable {
+    cursor: pointer;
 }

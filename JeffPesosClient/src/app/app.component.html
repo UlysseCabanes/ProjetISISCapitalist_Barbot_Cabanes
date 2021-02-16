@@ -14,7 +14,8 @@
 <div class="main">
     <div> Menu
         <br>
-        <button class="openbutton" mat-raised-button color="primary" (click)="showManagers = true">Managers</button>
+        <!-- [matBadge]="badgeManagers" [matBadgeHidden]="badgeManagers==0" -->
+        <button class="managersButton" mat-raised-button color="primary" (click)="showManagers = !showManagers">Managers</button>
     </div>
     <div class="product">
         <div>
@@ -34,26 +35,26 @@
 
 <div *ngIf="showManagers" class="modal">
     <div>
-        <h1 class="title">Star Wars world managers :</h1>
+        <h1 class="title">Star Wars world managers</h1>
     </div>
     <div>
         <div *ngFor="let manager of world.managers.pallier">
             <div *ngIf="!manager.unlocked" class="managersLayout">
                 <div>
-                    <div class="logo"><img class="round" [attr.src]="server+manager.logo" /> </div>
+                    <div class="managersLogo"><img class="round" [attr.src]="server+manager.logo" /> </div>
                 </div>
                 <div class="managersAttributes">
-                    <div class="managername"> {{ manager.name}} </div>
-                    <div class="managercible"> {{ world.products.product[manager.idcible-1].name }} </div>
-                    <div class="managercost"> {{ manager.seuil}} </div>
+                    <div class="managerName"> {{ manager.name}} </div>
+                    <div class="managerCible"> {{ world.products.product[manager.idcible-1].name }} </div>
+                    <div class="managerCost"> {{ manager.seuil}} </div>
                 </div>
-                <div>
-                    <div class="hireButton" (click)="hireManager(manager)"
+                <div class="hireButton">
+                    <div (click)="hireManager(manager)"
                         [ngClass]="{'selectable' : (world.money >= manager.seuil)}">Hire !</div>
                 </div>
             </div>
         </div>
-        <button class="closebutton" mat-raised-button color="primary"
+        <button class="closeButton" mat-raised-button color="primary"
             (click)="showManagers = !showManagers">Close</button>
     </div>
 </div>
