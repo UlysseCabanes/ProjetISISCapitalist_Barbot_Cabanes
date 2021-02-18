@@ -3,5 +3,6 @@
     <span>
         <img class='productLogo' (click)=startFabrication() [attr.src]="server+product.logo" />
         <mat-progress-bar class="progressbar" [value]="progressbarvalue"></mat-progress-bar>
+        <button id="achatButton" (click) = "onBuy(_qtAchat)">{{_qtAchat}}</button>
     </span>
 </div>

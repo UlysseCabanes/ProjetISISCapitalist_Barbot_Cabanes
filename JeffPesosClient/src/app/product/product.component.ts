@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
   lastUpdate = 0;
   _qtmulti="";
   _money = 0;
-
+  _qtAchat =0;
   constructor() { }
 
   ngOnInit(): void {
@@ -59,6 +59,19 @@ export class ProductComponent implements OnInit {
     }
   }
   calcMaxCanBuy(){
-
+    if (this._qtmulti == "x1"){
+      this._qtAchat = 1;
+    }
+    if (this._qtmulti == "x10"){
+      this._qtAchat = 10;
+    }
+    if (this._qtmulti == "x100"){
+      this._qtAchat = 100;
+    }
+    if (this._qtmulti == "MAX") {
+      this._qtAchat = 0;
+    }
+  }
+  onBuy(quantite : number){
   }
 }
