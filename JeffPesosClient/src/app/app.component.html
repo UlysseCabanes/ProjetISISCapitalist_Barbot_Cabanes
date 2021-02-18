@@ -17,8 +17,8 @@
 <div class="main">
     <div> Menu
         <br>
-        <!-- [matBadge]="badgeManagers" [matBadgeHidden]="badgeManagers==0" -->
-        <button class="managersButton" mat-raised-button color="primary" (click)="showManagers = !showManagers">Managers</button>
+        <button class="managersButton" mat-raised-button color="primary" [matBadge]="badgeManagers" 
+        [matBadgeHidden]="badgeManagers==0" (click)="showManagers = !showManagers">Managers</button>
     </div>
     <div class="product">
         <div>
