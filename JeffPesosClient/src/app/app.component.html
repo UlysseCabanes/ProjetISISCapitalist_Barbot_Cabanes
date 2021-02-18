@@ -5,9 +5,13 @@
         </span>
     </div>
     <div>
+        Argent :
         <span [innerHTML]="world.money | bigvalue"> </span>
     </div>
-    <div> ID du joueur </div>
+    <div> 
+        ID du joueur :
+        <input type="text" [(ngModel)]="username" (change)="onUsernameChanged()"/>
+    </div>
     <div>
         Multiplicateur :
         <button id="multiButton" (click) = "cycle()"> {{qtmulti}} </button>

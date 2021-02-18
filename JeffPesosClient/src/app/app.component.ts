@@ -15,13 +15,18 @@ export class AppComponent {
   title = 'JeffPesosClient';
   qtmulti = "x1";
   money = 0;
+  username = 'Captain' + Math.floor(Math.random() * 10000);
+  service: any;
 
-  constructor(private service: RestserviceService, private snackBar: MatSnackBar) {
+  constructor(service: RestserviceService, private snackBar: MatSnackBar) {
     this.server = service.getServer;
     service.getWorld().then(
     world => {
     this.world = world;
+    //Mettre à jour la valeur du badge des managers 
+    //dès le chargement de la page
     this.updateManagersBadges();
+    this.username = localStorage.getItem("username") || '';
     });
   }
 
@@ -89,5 +94,9 @@ export class AppComponent {
         this.qtmulti = "x1";
         break;
     }
+  }
+  onUsernameChanged() {
+    localStorage.setItem("username", this.username);
+    this.service.setUser(this.username);
   }
 }
