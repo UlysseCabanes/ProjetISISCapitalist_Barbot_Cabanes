@@ -4,17 +4,17 @@
             <img class="worldLogo" [attr.src]="server+world.logo" />
         </span>
     </div>
-    <div>
+    <div class="money">
         Argent :
         <span [innerHTML]="world.money | bigvalue"> </span>
     </div>
-    <div> 
-        ID du joueur :
-        <input type="text" [(ngModel)]="username" (change)="onUsernameChanged()"/>
-    </div>
-    <div>
+    <div class="multiplier">
         Multiplicateur :
         <button id="multiButton" (click) = "cycle()"> {{qtmulti}} </button>
+    </div>
+    <div class="id"> 
+        ID du joueur :
+        <input type="text" [(ngModel)]="username" (change)="onUsernameChanged()"/>
     </div>
 </div>
 

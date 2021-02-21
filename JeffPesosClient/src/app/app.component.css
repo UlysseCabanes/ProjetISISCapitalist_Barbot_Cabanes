@@ -1,34 +1,45 @@
+/* Header */
 .header {
     display: grid;
-    grid-template-columns: 25% 25% 30% 20%;
+    grid-template-columns: 20% 31.5% 30% 22.5%;
     margin: 1.9% 0 1.6% 1.8%;
 }
+.worldLogo {
+    height: 100px;
+    width: 300px;
+}
+.money, .multiplier, .id {
+    background-color: #D01012;
+    box-shadow: 0 7px 5px #00467D;
+    border: solid black 1px;
+    height: fit-content;
+    width: fit-content;
+    padding: 5px;
+    color: white;
+    font-size: medium;
+    -webkit-text-stroke: 0.2px;
+    -webkit-text-stroke-color: black;
+}
+/* Body */
 .main {
     display: grid;
     grid-template-columns: 20% 80%;
     margin-left: 1.8%;
 }
+/* Menu */
 .menu {
     background-color: #D01012;
+    color: white;
+    font-size: x-large;
+    -webkit-text-stroke: 0.3px;
+    -webkit-text-stroke-color: black;
     height: fit-content;
     width: fit-content;
     box-shadow: 0 7px 5px #00467D;
     border: solid black 1px;
+    padding: 10px;
 }
-.products {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.product {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: #D01012;
-    height: 100px;
-    width: 400px;
-    box-shadow: 0 7px 5px #00467D;
-    border: solid black 1px;
-    margin-bottom: 4.5%;
-}
+/* Fenêtre des mnagers */
 .modal { 
     position: fixed; /* reste en place */ 
     z-index: 2; /* au dessus du reste */ 
@@ -44,11 +55,7 @@
     color: white;
     box-shadow: 7px 7px 5px #00467D;
 }
-.round { 
-    width: 100px; 
-    height: 100px; 
-    border-radius: 50% 
-}
+/* Supperposition */
 .lesdeux { 
     position: relative; 
 }
@@ -58,12 +65,13 @@
     du coup il se superpose à l’autre qui est dans le flux normal */
     bottom: -10px; 
 }
-.worldLogo {
-    height: 100px;
-    width: 300px;
+/* Menu */
+.managersButton {
+    cursor: pointer;
+    margin-top: 20px;
 }
-header {
-    display: flex;
+.selectable {
+    cursor: pointer;
 }
 /* Managers */
 .managersLayout {
@@ -71,6 +79,13 @@ header {
     width: 400px;
     margin-top: 10px;
 }
+/* Image des managers */
+.round { 
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50% 
+}
+/* Nom, produit cible et prix des managers */
 .managersAttributes {
     margin: auto;
 }
@@ -78,6 +93,7 @@ header {
     margin: 0 auto 0 auto;
     width: fit-content;
 }
+/* Bouton d'engagement */
 .hireButton {
     margin: auto 0 auto 0;
     padding: 5px;
@@ -85,6 +101,7 @@ header {
     background-color: #0153F7;
     box-shadow: 2px 2px 5px black;
 }
+/* Bouton de fermeture */
 .closeButton {
     cursor: pointer;
     margin: 10px 0 0 22px;
@@ -95,10 +112,19 @@ header {
     border: none;
     box-shadow: 2px 2px 5px black;
 }
-/* Menu */
-.managersButton {
-    cursor: pointer;
+/* Liste des produits */
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
-.selectable {
-    cursor: pointer;
+/* Affichage d'un produit */
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #D01012;
+    height: 100px;
+    width: 400px;
+    box-shadow: 0 7px 5px #00467D;
+    border: solid black 1px;
+    margin-bottom: 4.5%;
 }
