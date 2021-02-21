@@ -1,26 +1,48 @@
 .header {
     display: grid;
     grid-template-columns: 25% 25% 30% 20%;
+    margin: 1.9% 0 1.6% 1.8%;
 }
 .main {
     display: grid;
     grid-template-columns: 20% 80%;
+    margin-left: 1.8%;
+}
+.menu {
+    background-color: #D01012;
+    height: fit-content;
+    width: fit-content;
+    box-shadow: 0 7px 5px #00467D;
+    border: solid black 1px;
+}
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .product {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-color: #D01012;
+    height: 100px;
+    width: 400px;
+    box-shadow: 0 7px 5px #00467D;
+    border: solid black 1px;
+    margin-bottom: 4.5%;
 }
 .modal { 
     position: fixed; /* reste en place */ 
     z-index: 2; /* au dessus du reste */ 
-    width: 800px; /* largeur */ 
-    height: 800px; /* hauteur */ 
+    width: fit-content; /* largeur */ 
+    height: fit-content; /* hauteur */ 
     overflow: auto; /* barre de scroll si besoin */ 
-    background-color: white; /* opaque */ 
-    border: solid; 
+    border: solid black 1px; 
     top:10%; /* a 10% du haut */ 
     left:20%; /* a 20% de la gauche */ 
-    padding: 10px;
+    padding: 30px;
+    background-color: #D01012;
+    font-size: large;
+    color: white;
+    box-shadow: 7px 7px 5px #00467D;
 }
 .round { 
     width: 100px; 
@@ -58,12 +80,20 @@ header {
 }
 .hireButton {
     margin: auto 0 auto 0;
-    border: solid black 1px;
     padding: 5px;
     cursor: default;
+    background-color: #0153F7;
+    box-shadow: 2px 2px 5px black;
 }
 .closeButton {
     cursor: pointer;
+    margin: 10px 0 0 22px;
+    padding: 5px;
+    background-color: #0153F7;
+    color: white;
+    font-size: medium;
+    border: none;
+    box-shadow: 2px 2px 5px black;
 }
 /* Menu */
 .managersButton {

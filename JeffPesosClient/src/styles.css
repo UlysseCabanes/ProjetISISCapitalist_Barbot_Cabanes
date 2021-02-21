@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    background-image: url("C:/Users/ulyss/Desktop/ISIS/4A/Semestre 2/SOA/ProjetISISCapitalist_Barbot_Cabanes/CabanesBarbot/src/main/resources/static/icones/background2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

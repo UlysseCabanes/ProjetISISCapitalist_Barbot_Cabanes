@@ -15,11 +15,24 @@ export class ProductComponent implements OnInit {
   _qtmulti="";
   _money = 0;
   _qtAchat =0;
+  color: String = '';
   constructor() { }
 
   ngOnInit(): void {
     setInterval(() => { this.calcScore(); }, 100);
     this.progressbarvalue = 0;
+    /*
+    https://www.angularjswiki.com/angular/progress-bar-in-angular-mat-progress-bar-examplematerial-design/
+    if(this.progressbarvalue < 50) {
+      this.color = '#FDF9E6';
+    } 
+    else if(this.progressbarvalue < 75) {
+      this.color= '#FBEA94';
+    } 
+    else {
+      this.color = '#D1B64B';
+    }
+    */
   }
 
   @Output() notifyProduction: EventEmitter<Product> = new

@@ -97,6 +97,48 @@ Star Wars World
         </pallier>
       </palliers>
     </product>
+    <!-- Death Star -->
+    <product>
+      <id>3</id>
+      <name>Death Star</name>
+      <logo>icones/deathStar.jpg</logo>
+      <cout>30</cout>
+      <croissance>1.07</croissance>
+      <revenu>10</revenu>
+      <vitesse>2000</vitesse>
+      <quantite>1</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>pallierDeathStar1</name>
+          <logo>icones/lightsaber.jpg</logo>
+          <seuil>25</seuil>
+          <idcible>2</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallierDeathStar2</name>
+          <logo>icones/lightsaber.jpg</logo>
+          <seuil>50</seuil>
+          <idcible>2</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallierDeathStar3</name>
+          <logo>icones/lightsaber.jpg</logo>
+          <seuil>100</seuil>
+          <idcible>2</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
   </products>
   <allunlocks>
     <pallier>
@@ -257,6 +299,15 @@ Star Wars World
       <idcible>2</idcible>
       <ratio>1.25</ratio>
       <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Darth Sidious</name>
+      <logo>icones/darthSidious.jpg</logo>
+      <seuil>2000</seuil>
+      <idcible>3</idcible>
+      <ratio>1.5</ratio>
+      <typeratio>vitesse</typeratio>
       <unlocked>false</unlocked>
     </pallier>
   </managers>

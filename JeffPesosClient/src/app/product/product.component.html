@@ -1,7 +1,9 @@
 <div class="product">
-    <span id=productname> {{product.name}} </span>
     <span>
         <img class='productLogo' (click)=startFabrication() [attr.src]="server+product.logo" />
+    </span>
+    <span class="productFeatures">
+        <span id="productname"> {{product.name}} </span>
         <mat-progress-bar class="progressbar" [value]="progressbarvalue"></mat-progress-bar>
         <button id="achatButton" (click) = "onBuy(_qtAchat)">{{_qtAchat}}</button>
     </span>
