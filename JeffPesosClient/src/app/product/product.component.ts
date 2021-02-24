@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from '../world';
+import { Product, World } from '../world';
 
 @Component({
   selector: 'app-product',
@@ -9,12 +9,13 @@ import { Product } from '../world';
 export class ProductComponent implements OnInit {
 
   product: Product = new Product();
+  world: World = new World();
   server = "http://localhost:8080/";
   progressbarvalue = 0;
   lastUpdate = 0;
   _qtmulti="";
   _money = 0;
-  _qtAchat =0;
+  qtAchat =0;
   color: String = '';
   constructor() { }
 
@@ -42,6 +43,9 @@ export class ProductComponent implements OnInit {
   set prod(value: Product) {
     this.product = value;
   }
+
+  @Output() notifyAchat: EventEmitter<World> = new
+  EventEmitter<World>();
 
   @Input()
   set money(value: number) {
@@ -72,19 +76,37 @@ export class ProductComponent implements OnInit {
     }
   }
   calcMaxCanBuy(){
-    if (this._qtmulti == "x1"){
-      this._qtAchat = 1;
+    let qtemax = (Math.log(1-((this._money * (1 - this.product.croissance)) / this.product.cout)) / Math.log(this.product.croissance)) - 1;
+    if (qtemax < 0) {
+      this.qtAchat = 0;
     }
-    if (this._qtmulti == "x10"){
-      this._qtAchat = 10;
-    }
-    if (this._qtmulti == "x100"){
-      this._qtAchat = 100;
-    }
-    if (this._qtmulti == "MAX") {
-      this._qtAchat = 0;
+    else {
+      this.qtAchat = Math.floor(qtemax);
     }
   }
-  onBuy(quantite : number){
+  onBuy(){
+    let newMoney = 0;
+    switch (this._qtmulti){
+      case "x1" : 
+        this._money -= this.product.cout*1;
+        break;
+      
+      case "x10" :
+        newMoney = this.product.croissance^10 * this.product.cout;
+        this._money -= newMoney;
+        break;
+
+      case "x100" :
+        newMoney = this.product.croissance^100 * this.product.cout;
+        this._money -= newMoney;
+        break;
+
+      case "MAX" :
+        newMoney = this.product.croissance^this.qtAchat * this.product.cout;
+        this._money -= newMoney;
+        break;
+    }
+    this.world.money = this._money;
+    this.notifyAchat.emit(this.world);
   }
 }

@@ -5,6 +5,11 @@
     <span class="productFeatures">
         <span id="productname"> {{product.name}} </span>
         <mat-progress-bar class="progressbar" [value]="progressbarvalue"></mat-progress-bar>
-        <button id="achatButton" (click) = "onBuy(_qtAchat)">{{_qtAchat}}</button>
+        <div [ngSwitch]="_qtmulti">
+            <button *ngSwitchCase="'x1'" [disabled]="qtAchat < 1" id="achatButton" (click) = "onBuy()">x1</button>
+            <button *ngSwitchCase="'x10'" [disabled]="qtAchat < 10" id="achatButton" (click) = "onBuy()">x10</button>
+            <button *ngSwitchCase="'x100'" [disabled]="qtAchat < 100" id="achatButton" (click) = "onBuy()">x100</button>
+            <button *ngSwitchCase="'MAX'" [disabled]="qtAchat <= 0" id="achatButton" (click) = "onBuy()">x{{qtAchat}}</button>
+        </div>
     </span>
 </div>

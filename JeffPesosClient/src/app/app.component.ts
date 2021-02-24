@@ -60,6 +60,9 @@ export class AppComponent {
     //Mise à jour de la valeur du badge des managers
     this.updateManagersBadges();
   }
+  onAchatDone(w : World){
+    this.world.money = w.money;
+  }
   
   //Valeur du badge des managers
   badgeManagers = 0;
