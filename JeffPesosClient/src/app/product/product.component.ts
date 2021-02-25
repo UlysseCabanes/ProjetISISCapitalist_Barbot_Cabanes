@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit {
   _money = 0;
   qtAchat =0;
   coutProduit = 0;
+  nbProduit =0;
   color: String = '';
   constructor() {
     
@@ -96,24 +97,28 @@ export class ProductComponent implements OnInit {
       case "x1" :
         this.product.cout = this.product.croissance* this.product.cout;
         this._money -= this.product.cout;
+        this.nbProduit += 1;
         this.showProductPrice();
         break;
       
       case "x10" :
         this.product.cout = Math.pow(this.product.croissance,10)* this.product.cout;
         this._money -= this.product.cout;
+        this.nbProduit += 10;
         this.showProductPrice();
         break;
 
       case "x100" :
         this.product.cout = Math.pow(this.product.croissance,100)* this.product.cout;
         this._money -= this.product.cout;
+        this.nbProduit += 100;
         this.showProductPrice();
         break;
 
       case "MAX" :
         this.product.cout = Math.pow(this.product.croissance,this.qtAchat)* this.product.cout;
         this._money -= this.product.cout;
+        this.nbProduit += this.qtAchat;
         this.showProductPrice();
         break;
     }
