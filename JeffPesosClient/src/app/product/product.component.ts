@@ -95,7 +95,6 @@ export class ProductComponent implements OnInit {
   onBuy(){
     switch (this._qtmulti){
       case "x1" :
-        //this.product.cout = this.product.croissance* this.product.cout;
         this.product.cout = this.product.cout*((1-Math.pow(this.product.croissance,2))/(1-this.product.croissance));
         this._money -= this.product.cout;
         this.nbProduit += 1;
@@ -103,7 +102,6 @@ export class ProductComponent implements OnInit {
         break;
       
       case "x10" :
-        //this.product.cout = Math.pow(this.product.croissance,10)* this.product.cout;
         this.product.cout = this.product.cout*((1-Math.pow(this.product.croissance,11))/(1-this.product.croissance));
         this._money -= this.product.cout;
         this.nbProduit += 10;
@@ -111,7 +109,6 @@ export class ProductComponent implements OnInit {
         break;
 
       case "x100" :
-        //this.product.cout = Math.pow(this.product.croissance,100)* this.product.cout;
         this.product.cout = this.product.cout*((1-Math.pow(this.product.croissance,101))/(1-this.product.croissance));
         this._money -= this.product.cout;
         this.nbProduit += 100;
@@ -119,7 +116,6 @@ export class ProductComponent implements OnInit {
         break;
 
       case "MAX" :
-        //this.product.cout = Math.pow(this.product.croissance,this.qtAchat)* this.product.cout;
         this.product.cout = this.product.cout*((1-Math.pow(this.product.croissance,this.qtAchat+1))/(1-this.product.croissance));
         this._money -= this.product.cout;
         this.nbProduit += this.qtAchat;
