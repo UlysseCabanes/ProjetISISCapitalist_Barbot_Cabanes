@@ -16,14 +16,14 @@
     grid-template-columns: 1fr 1fr;
 }
 .productFeatures {
-    margin: 15px 0 0 20px;
+    margin: 10px 0 0 20px;
     width: max-content;
 }
 #achatButton {
     background-color: #CDB247;
     border: none;
     height: 30px;
-    width: 30px;
+    width: 50px;
     margin-top: 5px;
     border: solid black 1px;
     cursor: pointer;
