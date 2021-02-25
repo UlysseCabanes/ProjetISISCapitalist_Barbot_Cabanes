@@ -16,8 +16,11 @@ export class ProductComponent implements OnInit {
   _qtmulti="";
   _money = 0;
   qtAchat =0;
+  coutProduit = 0;
   color: String = '';
-  constructor() { }
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
     setInterval(() => { this.calcScore(); }, 100);
@@ -42,10 +45,14 @@ export class ProductComponent implements OnInit {
   @Input()
   set prod(value: Product) {
     this.product = value;
+    this.coutProduit = this.product.cout;
   }
 
-  @Output() notifyAchat: EventEmitter<World> = new
+  @Output() notifyAchatW: EventEmitter<World> = new
   EventEmitter<World>();
+
+  @Output() notifyAchatP: EventEmitter<Product> = new
+  EventEmitter<Product>();
 
   @Input()
   set money(value: number) {
@@ -55,7 +62,7 @@ export class ProductComponent implements OnInit {
   @Input()
   set qtmulti(value: string) {
     this._qtmulti = value;
-    if (this._qtmulti && this.product) this.calcMaxCanBuy();
+    if (this._qtmulti && this.product) this.calcMaxCanBuy(); this.showProductPrice();
   }
   startFabrication() {
     this.product.timeleft = this.product.vitesse;
@@ -77,7 +84,7 @@ export class ProductComponent implements OnInit {
   }
   calcMaxCanBuy(){
     let qtemax = (Math.log(1-((this._money * (1 - this.product.croissance)) / this.product.cout)) / Math.log(this.product.croissance)) - 1;
-    if (qtemax < 0) {
+    if (qtemax <= 0) {
       this.qtAchat = 0;
     }
     else {
@@ -85,28 +92,52 @@ export class ProductComponent implements OnInit {
     }
   }
   onBuy(){
-    let newMoney = 0;
     switch (this._qtmulti){
-      case "x1" : 
-        this._money -= this.product.cout*1;
+      case "x1" :
+        this.product.cout = this.product.croissance* this.product.cout;
+        this._money -= this.product.cout;
+        this.showProductPrice();
         break;
       
       case "x10" :
-        newMoney = this.product.croissance^10 * this.product.cout;
-        this._money -= newMoney;
+        this.product.cout = Math.pow(this.product.croissance,10)* this.product.cout;
+        this._money -= this.product.cout;
+        this.showProductPrice();
         break;
 
       case "x100" :
-        newMoney = this.product.croissance^100 * this.product.cout;
-        this._money -= newMoney;
+        this.product.cout = Math.pow(this.product.croissance,100)* this.product.cout;
+        this._money -= this.product.cout;
+        this.showProductPrice();
         break;
 
       case "MAX" :
-        newMoney = this.product.croissance^this.qtAchat * this.product.cout;
-        this._money -= newMoney;
+        this.product.cout = Math.pow(this.product.croissance,this.qtAchat)* this.product.cout;
+        this._money -= this.product.cout;
+        this.showProductPrice();
         break;
     }
     this.world.money = this._money;
-    this.notifyAchat.emit(this.world);
+    this.notifyAchatW.emit(this.world);
+    this.notifyAchatP.emit(this.product);
+  }
+  showProductPrice(){
+    switch (this._qtmulti){
+      case "x1" :
+        this.coutProduit = this.product.cout;
+        break;
+      
+      case "x10" :
+        this.coutProduit = Math.pow(this.product.croissance,10)* this.product.cout;
+        break;
+
+      case "x100" :
+        this.coutProduit = Math.pow(this.product.croissance,100)* this.product.cout;
+        break;
+
+      case "MAX" :
+        this.coutProduit = Math.pow(this.product.croissance,this.qtAchat)* this.product.cout;
+        break;
+    }
   }
 }

@@ -60,8 +60,12 @@ export class AppComponent {
     //Mise à jour de la valeur du badge des managers
     this.updateManagersBadges();
   }
-  onAchatDone(w : World){
+  onAchatDoneW(w : World){
     this.world.money = w.money;
+  }
+
+  onAchatDoneP(p : Product){
+    this.world.products.product[p.id-1].cout = p.cout;
   }
   
   //Valeur du badge des managers
