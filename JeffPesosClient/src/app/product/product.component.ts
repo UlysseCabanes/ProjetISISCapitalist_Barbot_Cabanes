@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
   _money = 0;
   qtAchat =0;
   coutProduit = 0;
-  nbProduit =0;
+  totalAchat = 0;
   color: String = '';
   constructor() {
     
@@ -49,11 +49,9 @@ export class ProductComponent implements OnInit {
     this.coutProduit = this.product.cout;
   }
 
-  @Output() notifyAchatW: EventEmitter<World> = new
+  @Output() notifyAchat: EventEmitter<World> = new
   EventEmitter<World>();
 
-  @Output() notifyAchatP: EventEmitter<Product> = new
-  EventEmitter<Product>();
 
   @Input()
   set money(value: number) {
@@ -84,7 +82,7 @@ export class ProductComponent implements OnInit {
     }
   }
   calcMaxCanBuy(){
-    let qtemax = (Math.log(1-((this._money * (1 - this.product.croissance)) / this.product.cout)) / Math.log(this.product.croissance)) - 1;
+    let qtemax = (Math.log(1-((this._money * (1 - this.product.croissance)) / this.product.cout)) / Math.log(this.product.croissance)) - (1+this.product.quantite);
     if (qtemax <= 0) {
       this.qtAchat = 0;
     }
@@ -95,53 +93,49 @@ export class ProductComponent implements OnInit {
   onBuy(){
     switch (this._qtmulti){
       case "x1" :
-        this.product.cout = this.product.cout*((1-Math.pow(this.product.croissance,2))/(1-this.product.croissance));
-        this._money -= this.product.cout;
-        this.nbProduit += 1;
+        this.totalAchat = this.product.cout*((1-Math.pow(this.product.croissance,1+this.product.quantite))/(1-this.product.croissance));
+        this.product.quantite += 1;
         this.showProductPrice();
         break;
       
       case "x10" :
-        this.product.cout = this.product.cout*((1-Math.pow(this.product.croissance,11))/(1-this.product.croissance));
-        this._money -= this.product.cout;
-        this.nbProduit += 10;
+        this.totalAchat = this.product.cout*((1-Math.pow(this.product.croissance,10+this.product.quantite))/(1-this.product.croissance));
+        this.product.quantite += 10;
         this.showProductPrice();
         break;
 
       case "x100" :
-        this.product.cout = this.product.cout*((1-Math.pow(this.product.croissance,101))/(1-this.product.croissance));
-        this._money -= this.product.cout;
-        this.nbProduit += 100;
+        this.totalAchat = this.product.cout*((1-Math.pow(this.product.croissance,100+this.product.quantite))/(1-this.product.croissance));
+        this.product.quantite += 100;
         this.showProductPrice();
         break;
 
       case "MAX" :
-        this.product.cout = this.product.cout*((1-Math.pow(this.product.croissance,this.qtAchat+1))/(1-this.product.croissance));
-        this._money -= this.product.cout;
-        this.nbProduit += this.qtAchat;
+        this.totalAchat = this.product.cout*((1-Math.pow(this.product.croissance,this.qtAchat+this.product.quantite))/(1-this.product.croissance));
+        this.product.quantite += this.qtAchat;
         this.showProductPrice();
         break;
     }
+    this._money -= this.totalAchat;
     this.world.money = this._money;
-    this.notifyAchatW.emit(this.world);
-    this.notifyAchatP.emit(this.product);
+    this.notifyAchat.emit(this.world);
   }
   showProductPrice(){
     switch (this._qtmulti){
       case "x1" :
-        this.coutProduit = this.product.cout;
+        this.coutProduit = this.product.cout*((1-Math.pow(this.product.croissance,1+this.product.quantite))/(1-this.product.croissance));
         break;
       
       case "x10" :
-        this.coutProduit = this.product.cout*((1-Math.pow(this.product.croissance,11))/(1-this.product.croissance));
+        this.coutProduit = this.product.cout*((1-Math.pow(this.product.croissance,10+this.product.quantite))/(1-this.product.croissance));
         break;
 
       case "x100" :
-        this.coutProduit = this.product.cout*((1-Math.pow(this.product.croissance,101))/(1-this.product.croissance));
+        this.coutProduit = this.product.cout*((1-Math.pow(this.product.croissance,100+this.product.quantite))/(1-this.product.croissance));
         break;
 
       case "MAX" :
-        this.coutProduit = this.product.cout*((1-Math.pow(this.product.croissance,this.qtAchat+1))/(1-this.product.croissance));
+        this.coutProduit = this.product.cout*((1-Math.pow(this.product.croissance,this.qtAchat+this.product.quantite))/(1-this.product.croissance));
         break;
     }
   }
