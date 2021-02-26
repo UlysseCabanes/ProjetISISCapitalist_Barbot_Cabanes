@@ -18,6 +18,7 @@ export class ProductComponent implements OnInit {
   qtAchat =0;
   coutProduit = 0;
   totalAchat = 0;
+  baseRevenu = 0;
   color: String = '';
   constructor() {
     
@@ -47,6 +48,7 @@ export class ProductComponent implements OnInit {
   set prod(value: Product) {
     this.product = value;
     this.coutProduit = this.product.cout;
+    this.baseRevenu = this.product.revenu;
   }
 
   @Output() notifyAchat: EventEmitter<World> = new
@@ -95,24 +97,28 @@ export class ProductComponent implements OnInit {
       case "x1" :
         this.totalAchat = this.product.cout*((1-Math.pow(this.product.croissance,1+this.product.quantite))/(1-this.product.croissance));
         this.product.quantite += 1;
+        this.product.revenu += this.baseRevenu;
         this.showProductPrice();
         break;
       
       case "x10" :
         this.totalAchat = this.product.cout*((1-Math.pow(this.product.croissance,10+this.product.quantite))/(1-this.product.croissance));
         this.product.quantite += 10;
+        this.product.revenu += this.baseRevenu*10;
         this.showProductPrice();
         break;
 
       case "x100" :
         this.totalAchat = this.product.cout*((1-Math.pow(this.product.croissance,100+this.product.quantite))/(1-this.product.croissance));
         this.product.quantite += 100;
+        this.product.revenu += this.baseRevenu*100;
         this.showProductPrice();
         break;
 
       case "MAX" :
         this.totalAchat = this.product.cout*((1-Math.pow(this.product.croissance,this.qtAchat+this.product.quantite))/(1-this.product.croissance));
         this.product.quantite += this.qtAchat;
+        this.product.revenu += this.baseRevenu*this.qtAchat;
         this.showProductPrice();
         break;
     }
