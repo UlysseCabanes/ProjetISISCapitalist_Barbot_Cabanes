@@ -26,20 +26,25 @@
     </div>
     <div class="products">
         <div class="product col-md-6">
-            <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[0]" 
+            <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[0]"
                 (notifyProduction)="onProductionDone($event)" (notifyAchat)="onAchatDone($event)"></app-product>
         </div>
         <div class="product col-md-6">
-            <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[1]" 
+            <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[1]"
                 (notifyProduction)="onProductionDone($event)" (notifyAchat)="onAchatDone($event)"></app-product>
         </div>
         <div class="product col-md-6"> 
-            <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[2]" 
+            <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[2]"
                 (notifyProduction)="onProductionDone($event)" (notifyAchat)="onAchatDone($event)"></app-product>
         </div>
-        <div> quatrième produit </div>
-        <div> cinquième produit </div>
-        <div> sixième produit </div>
+        <div class="product col-md-6"> 
+            <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[3]"
+                (notifyProduction)="onProductionDone($event)" (notifyAchat)="onAchatDone($event)"></app-product>
+        </div>
+        <div class="product col-md-6"> 
+            <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[4]"
+                (notifyProduction)="onProductionDone($event)" (notifyAchat)="onAchatDone($event)"></app-product>
+        </div>
     </div>
 </div>
 
