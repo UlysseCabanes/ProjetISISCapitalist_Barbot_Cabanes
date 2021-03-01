@@ -28,6 +28,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     setInterval(() => { this.calcScore(); }, 100);
     this.progressbarvalue = 0;
+
     /*
     https://www.angularjswiki.com/angular/progress-bar-in-angular-mat-progress-bar-examplematerial-design/
     if(this.progressbarvalue < 50) {
@@ -70,6 +71,8 @@ export class ProductComponent implements OnInit {
     this.product.timeleft = this.product.vitesse;
 
     this.lastUpdate = Date.now();
+
+    this.calcMaxCanBuy(); this.disableOnClick();
   }
   calcScore() {
     if (this.product.timeleft != 0) {
@@ -85,7 +88,7 @@ export class ProductComponent implements OnInit {
     }
   }
   calcMaxCanBuy(){
-    let qtemax = (Math.log(1-((this._money * (1 - this.product.croissance)) / this.product.cout)) / Math.log(this.product.croissance)) - 1;
+    let qtemax = (Math.log(1-((this._money * (1 - this.product.croissance)) / this.product.cout)) / Math.log(this.product.croissance));
     if (qtemax <= 0) {
       this.qtAchat = 0;
     }
@@ -123,10 +126,10 @@ export class ProductComponent implements OnInit {
         this.product.revenu += this.baseRevenu*this.qtAchat;
         break;
     }
-    this.showProductPrice(); 
     this._money -= this.totalAchat;
     this.world.money = this._money;
     this.notifyAchat.emit(this.world);
+    this.showProductPrice();this.calcMaxCanBuy(); this.disableOnClick();
   }
   showProductPrice(){
     switch (this._qtmulti){
