@@ -21,8 +21,10 @@ export class ProductComponent implements OnInit {
   baseRevenu = 0;
   color: String = '';
   click : boolean = false;
+  prochainPallier: number = 0;
+  
   constructor() {
-    
+
   }
 
   ngOnInit(): void {
@@ -51,6 +53,7 @@ export class ProductComponent implements OnInit {
     this.product = value;
     this.coutProduit = this.product.cout;
     this.baseRevenu = this.product.revenu;
+    this.prochainPallier = this.product.palliers.pallier[0].seuil;
   }
 
   @Output() notifyAchat: EventEmitter<World> = new
@@ -129,7 +132,10 @@ export class ProductComponent implements OnInit {
     this._money -= this.totalAchat;
     this.world.money = this._money;
     this.notifyAchat.emit(this.world);
-    this.showProductPrice();this.calcMaxCanBuy(); this.disableOnClick();
+    this.showProductPrice();
+    this.calcMaxCanBuy(); 
+    this.disableOnClick();
+    this.setProchainPallier();
   }
   showProductPrice(){
     switch (this._qtmulti){
@@ -187,6 +193,15 @@ export class ProductComponent implements OnInit {
           this.click = false;
         }
         break;
+    }
+  }
+
+  /* Déterminer le prochain pallier à atteindre pour ce produit */
+  setProchainPallier() {
+    for (let p of this.product.palliers.pallier) {
+      if (p.unlocked) {
+        this.prochainPallier = p.seuil;
+      }
     }
   }
 }

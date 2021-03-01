@@ -3,6 +3,13 @@
     width: 100px;
     cursor: pointer;
 }
+.productLogo:hover {
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    border-bottom: solid #D01012 10px;
+    filter: brightness(92%);
+}
 
 #productname {
     font-size: x-large;
@@ -28,6 +35,9 @@
     border: solid black 1px;
     cursor: pointer;
     font-size: medium;
+}
+#achatButton:hover {
+    filter: brightness(85%);
 }
 .progressbar {
     margin-top: 10px;

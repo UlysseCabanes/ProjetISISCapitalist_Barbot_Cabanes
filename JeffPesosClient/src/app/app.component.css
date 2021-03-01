@@ -1,3 +1,6 @@
+button:enabled:hover {
+    filter: brightness(85%);
+}
 /* Header */
 .header {
     display: grid;
@@ -7,6 +10,11 @@
 .worldLogo {
     height: 100px;
     width: 300px;
+}
+.moneyLogo {
+    height: 15px;
+    width: 15px;
+    margin-left: 5px;
 }
 .money, .multiplier, .id {
     background-color: #D01012;
@@ -20,6 +28,13 @@
     -webkit-text-stroke: 0.2px;
     -webkit-text-stroke-color: black;
 }
+#multiButton {
+    cursor: pointer;
+    background-color: #0153F7;
+    border: none;
+    color:white;
+    box-shadow: 2px 2px 5px black;
+}
 /* Body */
 .main {
     display: grid;
@@ -31,13 +46,15 @@
     background-color: #D01012;
     color: white;
     font-size: x-large;
-    -webkit-text-stroke: 0.3px;
-    -webkit-text-stroke-color: black;
     height: fit-content;
     width: fit-content;
     box-shadow: 0 7px 5px #00467D;
     border: solid black 1px;
     padding: 10px;
+}
+.menuTitle {
+    -webkit-text-stroke: 0.3px;
+    -webkit-text-stroke-color: black;
 }
 /* Fenêtre des mnagers */
 .modal { 
@@ -67,8 +84,13 @@
 }
 /* Menu */
 .managersButton {
+    padding: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    background-color: #0153F7;
+    border: none;
+    color:white;
+    box-shadow: 2px 2px 5px black;
+    -webkit-text-stroke: 0px;
 }
 .selectable {
     cursor: pointer;
@@ -94,11 +116,21 @@
     width: fit-content;
 }
 /* Bouton d'engagement */
-.hireButton {
+.hireButton:enabled {
     margin: auto 0 auto 0;
     padding: 5px;
-    cursor: default;
+    cursor: pointer;
     background-color: #0153F7;
+    border: none;
+    color:white;
+    box-shadow: 2px 2px 5px black;
+}
+.hireButton:disabled {
+    margin: auto 0 auto 0;
+    padding: 5px;
+    background-color: #0153F7;
+    color: #BFBFBF;
+    border: none;
     box-shadow: 2px 2px 5px black;
 }
 /* Bouton de fermeture */
