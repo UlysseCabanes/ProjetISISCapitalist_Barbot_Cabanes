@@ -18,7 +18,7 @@ Star Wars World
       <id>1</id>
       <name>Blaster</name>
       <logo>icones/blaster.jpg</logo>
-      <cout>4</cout>
+      <cout>5</cout>
       <croissance>1.07</croissance>
       <revenu>1</revenu>
       <vitesse>1000</vitesse>
@@ -60,9 +60,51 @@ Star Wars World
       <id>2</id>
       <name>Lightsaber</name>
       <logo>icones/lightsaber.jpg</logo>
-      <cout>12</cout>
+      <cout>15</cout>
       <croissance>1.07</croissance>
       <revenu>3</revenu>
+      <vitesse>2000</vitesse>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>pallierLightsaber1</name>
+          <logo>icones/lightsaber.jpg</logo>
+          <seuil>25</seuil>
+          <idcible>2</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallierLightsaber2</name>
+          <logo>icones/lightsaber.jpg</logo>
+          <seuil>50</seuil>
+          <idcible>2</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallierLightsaber3</name>
+          <logo>icones/lightsaber.jpg</logo>
+          <seuil>100</seuil>
+          <idcible>2</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+     <!-- Clone trooper -->
+    <product>
+      <id>3</id>
+      <name>Clone trooper</name>
+      <logo>icones/cloneTrooper.jpg</logo>
+      <cout>45</cout>
+      <croissance>1.07</croissance>
+      <revenu>9</revenu>
       <vitesse>2000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
@@ -101,8 +143,8 @@ Star Wars World
     <product>
       <id>4</id>
       <name>X-wing</name>
-      <logo>icones/x-wing.png</logo>
-      <cout>100</cout>
+      <logo>icones/x-wing.jpg</logo>
+      <cout>150</cout>
       <croissance>1.07</croissance>
       <revenu>30</revenu>
       <vitesse>2000</vitesse>
@@ -144,7 +186,7 @@ Star Wars World
       <id>5</id>
       <name>Star destroyer</name>
       <logo>icones/starDestroyer.jpg</logo>
-      <cout>300</cout>
+      <cout>450</cout>
       <croissance>1.07</croissance>
       <revenu>90</revenu>
       <vitesse>1000</vitesse>
@@ -186,9 +228,9 @@ Star Wars World
       <id>6</id>
       <name>Death Star</name>
       <logo>icones/deathStar.jpg</logo>
-      <cout>1000</cout>
+      <cout>1500</cout>
       <croissance>1.07</croissance>
-      <revenu>100</revenu>
+      <revenu>300</revenu>
       <vitesse>2000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
@@ -388,8 +430,8 @@ Star Wars World
       <unlocked>false</unlocked>
     </pallier>
     <pallier>
-      <name>Mace Windu</name>
-      <logo>icones/maceWindu.jpg</logo>
+      <name>Lama Su</name>
+      <logo>icones/lamaSu.jpg</logo>
       <seuil>2000</seuil>
       <idcible>3</idcible>
       <ratio>1.25</ratio>
@@ -406,12 +448,12 @@ Star Wars World
       <unlocked>false</unlocked>
     </pallier>
     <pallier>
-      <name>Mace Windu</name>
-      <logo>icones/maceWindu.jpg</logo>
+      <name>Imperial officer</name>
+      <logo>icones/imperialOfficer.jpg</logo>
       <seuil>8000</seuil>
       <idcible>5</idcible>
-      <ratio>1.25</ratio>
-      <typeratio>gain</typeratio>
+      <ratio>1.5</ratio>
+      <typeratio>vitesse</typeratio>
       <unlocked>false</unlocked>
     </pallier>
     <pallier>
