@@ -27,7 +27,7 @@ Star Wars World
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>pallier1</name>
+          <name>pallierBlaster1</name>
           <logo>icones/blaster.jpeg</logo>
           <seuil>25</seuil>
           <idcible>1</idcible>
@@ -36,7 +36,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallier2</name>
+          <name>pallierBlaster2</name>
           <logo>icones/blaster.jpeg</logo>
           <seuil>50</seuil>
           <idcible>1</idcible>
@@ -45,7 +45,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallier3</name>
+          <name>pallierBlaster3</name>
           <logo>icones/blaster.jpeg</logo>
           <seuil>100</seuil>
           <idcible>1</idcible>
@@ -97,14 +97,98 @@ Star Wars World
         </pallier>
       </palliers>
     </product>
+    <!-- X-wing -->
+    <product>
+      <id>4</id>
+      <name>X-wing</name>
+      <logo>icones/x-wing.png</logo>
+      <cout>100</cout>
+      <croissance>1.07</croissance>
+      <revenu>30</revenu>
+      <vitesse>2000</vitesse>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>pallierXWing1</name>
+          <logo>icones/lightsaber.jpg</logo>
+          <seuil>25</seuil>
+          <idcible>2</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallierXWing2</name>
+          <logo>icones/lightsaber.jpg</logo>
+          <seuil>50</seuil>
+          <idcible>2</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallierXWing3</name>
+          <logo>icones/lightsaber.jpg</logo>
+          <seuil>100</seuil>
+          <idcible>2</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+    <!-- Star destroyer -->
+    <product>
+      <id>5</id>
+      <name>Star destroyer</name>
+      <logo>icones/starDestroyer.jpg</logo>
+      <cout>300</cout>
+      <croissance>1.07</croissance>
+      <revenu>90</revenu>
+      <vitesse>1000</vitesse>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>pallierBlaster1</name>
+          <logo>icones/blaster.jpeg</logo>
+          <seuil>25</seuil>
+          <idcible>1</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallierBlaster2</name>
+          <logo>icones/blaster.jpeg</logo>
+          <seuil>50</seuil>
+          <idcible>1</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallierBlaster3</name>
+          <logo>icones/blaster.jpeg</logo>
+          <seuil>100</seuil>
+          <idcible>1</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
     <!-- Death Star -->
     <product>
-      <id>3</id>
+      <id>6</id>
       <name>Death Star</name>
       <logo>icones/deathStar.jpg</logo>
-      <cout>30</cout>
+      <cout>1000</cout>
       <croissance>1.07</croissance>
-      <revenu>10</revenu>
+      <revenu>100</revenu>
       <vitesse>2000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
@@ -253,6 +337,7 @@ Star Wars World
       <unlocked>false</unlocked>
     </pallier>
   </upgrades>
+  <!-- Anges -->
   <angelupgrades>
     <pallier>
       <name>anakin</name>
@@ -282,6 +367,7 @@ Star Wars World
       <unlocked>false</unlocked>
     </pallier>
   </angelupgrades>
+  <!-- Managers -->
   <managers>
     <pallier>
       <name>Han Solo</name>
@@ -302,10 +388,37 @@ Star Wars World
       <unlocked>false</unlocked>
     </pallier>
     <pallier>
-      <name>Darth Sidious</name>
-      <logo>icones/darthSidious.jpg</logo>
+      <name>Mace Windu</name>
+      <logo>icones/maceWindu.jpg</logo>
       <seuil>2000</seuil>
       <idcible>3</idcible>
+      <ratio>1.25</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Luke Skywalker</name>
+      <logo>icones/lukeSkywalker.jpg</logo>
+      <seuil>4000</seuil>
+      <idcible>4</idcible>
+      <ratio>1.5</ratio>
+      <typeratio>vitesse</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Mace Windu</name>
+      <logo>icones/maceWindu.jpg</logo>
+      <seuil>8000</seuil>
+      <idcible>5</idcible>
+      <ratio>1.25</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Darth Sidious</name>
+      <logo>icones/darthSidious.jpg</logo>
+      <seuil>16000</seuil>
+      <idcible>6</idcible>
       <ratio>1.5</ratio>
       <typeratio>vitesse</typeratio>
       <unlocked>false</unlocked>
