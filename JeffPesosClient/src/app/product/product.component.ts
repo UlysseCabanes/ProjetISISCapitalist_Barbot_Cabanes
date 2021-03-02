@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Product, World } from '../world';
+import { Product, World, Pallier } from '../world';
 
 @Component({
   selector: 'app-product',
@@ -21,7 +21,7 @@ export class ProductComponent implements OnInit {
   baseRevenu = 0;
   color: String = '';
   click : boolean = false;
-  prochainPallier: number = 0;
+  prochainPallier: Pallier = new Pallier();
   
   constructor() {
 
@@ -53,7 +53,7 @@ export class ProductComponent implements OnInit {
     this.product = value;
     this.coutProduit = this.product.cout;
     this.baseRevenu = this.product.revenu;
-    this.prochainPallier = this.product.palliers.pallier[0].seuil;
+    this.prochainPallier = this.product.palliers.pallier[0];
   }
 
   @Output() notifyAchat: EventEmitter<World> = new
@@ -135,7 +135,16 @@ export class ProductComponent implements OnInit {
     this.showProductPrice();
     this.calcMaxCanBuy(); 
     this.disableOnClick();
-    this.setProchainPallier();
+    /* Unlocks */
+    let lesPalliers = this.product.palliers.pallier;
+    /* Débloquer un pallier lorsque la quantité de produits requise est atteinte */
+    /* Déterminer le prochain pallier à atteindre pour ce produit */
+    for (let i = 0; i < lesPalliers.length; i++) {
+      if (this.product.quantite >= lesPalliers[i].seuil) {
+        lesPalliers[i].unlocked = true;
+        this.prochainPallier = lesPalliers[i+1];
+      }
+    }
   }
   showProductPrice(){
     switch (this._qtmulti){
@@ -193,15 +202,6 @@ export class ProductComponent implements OnInit {
           this.click = false;
         }
         break;
-    }
-  }
-
-  /* Déterminer le prochain pallier à atteindre pour ce produit */
-  setProchainPallier() {
-    for (let p of this.product.palliers.pallier) {
-      if (p.unlocked) {
-        this.prochainPallier = p.seuil;
-      }
     }
   }
 }
