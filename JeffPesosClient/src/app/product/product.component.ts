@@ -13,9 +13,9 @@ export class ProductComponent implements OnInit {
   server = "http://localhost:8080/";
   progressbarvalue = 0;
   lastUpdate = 0;
-  _qtmulti="";
+  _qtmulti = "";
   _money = 0;
-  qtAchat =0;
+  qtAchat = 0;
   coutProduit = 0;
   totalAchat = 0;
   baseRevenu = 0;
@@ -57,7 +57,7 @@ export class ProductComponent implements OnInit {
   }
 
   @Output() notifyAchat: EventEmitter<World> = new
-  EventEmitter<World>();
+    EventEmitter<World>();
 
 
   @Input()
@@ -71,15 +71,17 @@ export class ProductComponent implements OnInit {
     if (this._qtmulti && this.product) this.calcMaxCanBuy(); this.showProductPrice(); this.disableOnClick();
   }
   startFabrication() {
-    this.product.timeleft = this.product.vitesse;
-
-    this.lastUpdate = Date.now();
-
-    this.calcMaxCanBuy(); this.disableOnClick();
+    if (this.product.quantite != 0) {
+      this.product.timeleft = this.product.vitesse;
+      this.lastUpdate = Date.now();
+    }
   }
   calcScore() {
+    if (this.product.managerUnlocked && this.product.timeleft == 0) {
+      this.startFabrication();
+    }
     if (this.product.timeleft != 0) {
-      this.product.timeleft = this.product.timeleft - (Date.now() - this.lastUpdate);
+      this.product.timeleft = this.product.vitesse - (Date.now() - this.lastUpdate);
       if (this.product.timeleft <= 0) {
         this.product.timeleft = 0;
         this.progressbarvalue = 0;
@@ -90,8 +92,8 @@ export class ProductComponent implements OnInit {
       }
     }
   }
-  calcMaxCanBuy(){
-    let qtemax = (Math.log(1-((this._money * (1 - this.product.croissance)) / this.product.cout)) / Math.log(this.product.croissance));
+  calcMaxCanBuy() {
+    let qtemax = (Math.log(1 - ((this._money * (1 - this.product.croissance)) / this.product.cout)) / Math.log(this.product.croissance));
     if (qtemax <= 0) {
       this.qtAchat = 0;
     }
@@ -99,41 +101,41 @@ export class ProductComponent implements OnInit {
       this.qtAchat = Math.floor(qtemax);
     }
   }
-  onBuy(){
-    switch (this._qtmulti){
-      case "x1" :
+  onBuy() {
+    switch (this._qtmulti) {
+      case "x1":
         this.totalAchat = this.product.cout;
-        this.product.cout = Math.pow(this.product.croissance,1)*this.product.cout;
+        this.product.cout = Math.pow(this.product.croissance, 1) * this.product.cout;
         this.product.quantite += 1;
         this.product.revenu += this.baseRevenu;
         break;
-      
-      case "x10" :
-        this.totalAchat = this.product.cout*((1-Math.pow(this.product.croissance,10))/(1-this.product.croissance));
-        this.product.cout = Math.pow(this.product.croissance,10)*this.product.cout;
+
+      case "x10":
+        this.totalAchat = this.product.cout * ((1 - Math.pow(this.product.croissance, 10)) / (1 - this.product.croissance));
+        this.product.cout = Math.pow(this.product.croissance, 10) * this.product.cout;
         this.product.quantite += 10;
-        this.product.revenu += this.baseRevenu*10;
+        this.product.revenu += this.baseRevenu * 10;
         break;
 
-      case "x100" :
-        this.totalAchat = this.product.cout*((1-Math.pow(this.product.croissance,100))/(1-this.product.croissance));
-        this.product.cout = Math.pow(this.product.croissance,100)*this.product.cout;
+      case "x100":
+        this.totalAchat = this.product.cout * ((1 - Math.pow(this.product.croissance, 100)) / (1 - this.product.croissance));
+        this.product.cout = Math.pow(this.product.croissance, 100) * this.product.cout;
         this.product.quantite += 100;
-        this.product.revenu += this.baseRevenu*100;
+        this.product.revenu += this.baseRevenu * 100;
         break;
 
-      case "MAX" :
-        this.totalAchat = this.product.cout*((1-Math.pow(this.product.croissance,this.qtAchat))/(1-this.product.croissance));
-        this.product.cout = Math.pow(this.product.croissance,this.qtAchat)*this.product.cout;
+      case "MAX":
+        this.totalAchat = this.product.cout * ((1 - Math.pow(this.product.croissance, this.qtAchat)) / (1 - this.product.croissance));
+        this.product.cout = Math.pow(this.product.croissance, this.qtAchat) * this.product.cout;
         this.product.quantite += this.qtAchat;
-        this.product.revenu += this.baseRevenu*this.qtAchat;
+        this.product.revenu += this.baseRevenu * this.qtAchat;
         break;
     }
     this._money -= this.totalAchat;
     this.world.money = this._money;
     this.notifyAchat.emit(this.world);
     this.showProductPrice();
-    this.calcMaxCanBuy(); 
+    this.calcMaxCanBuy();
     this.disableOnClick();
     /* Unlocks */
     let lesPalliers = this.product.palliers.pallier;
@@ -146,38 +148,29 @@ export class ProductComponent implements OnInit {
       }
     }
   }
-  showProductPrice(){
-    switch (this._qtmulti){
-      case "x1" :
-        this.coutProduit = this.product.cout*((1-Math.pow(this.product.croissance,1))/(1-this.product.croissance));
-        break;
-      
-      case "x10" :
-        this.coutProduit = this.product.cout*((1-Math.pow(this.product.croissance,10))/(1-this.product.croissance));
+  showProductPrice() {
+    switch (this._qtmulti) {
+      case "x1":
+        this.coutProduit = this.product.cout * ((1 - Math.pow(this.product.croissance, 1)) / (1 - this.product.croissance));
         break;
 
-      case "x100" :
-        this.coutProduit = this.product.cout*((1-Math.pow(this.product.croissance,100))/(1-this.product.croissance));
+      case "x10":
+        this.coutProduit = this.product.cout * ((1 - Math.pow(this.product.croissance, 10)) / (1 - this.product.croissance));
         break;
 
-      case "MAX" :
-        this.coutProduit = this.product.cout*((1-Math.pow(this.product.croissance,this.qtAchat))/(1-this.product.croissance));
+      case "x100":
+        this.coutProduit = this.product.cout * ((1 - Math.pow(this.product.croissance, 100)) / (1 - this.product.croissance));
+        break;
+
+      case "MAX":
+        this.coutProduit = this.product.cout * ((1 - Math.pow(this.product.croissance, this.qtAchat)) / (1 - this.product.croissance));
         break;
     }
   }
-  disableOnClick(){
-    switch (this._qtmulti){
-      case "x1" :
-        if (this.qtAchat <1){
-          this.click = true;
-        }
-        else {
-          this.click = false;
-        }
-        break;
-      
-      case "x10" :
-        if (this.qtAchat <10){
+  disableOnClick() {
+    switch (this._qtmulti) {
+      case "x1":
+        if (this.qtAchat < 1) {
           this.click = true;
         }
         else {
@@ -185,8 +178,8 @@ export class ProductComponent implements OnInit {
         }
         break;
 
-      case "x100" :
-        if (this.qtAchat <100){
+      case "x10":
+        if (this.qtAchat < 10) {
           this.click = true;
         }
         else {
@@ -194,8 +187,17 @@ export class ProductComponent implements OnInit {
         }
         break;
 
-      case "MAX" :
-        if (this.qtAchat <=0){
+      case "x100":
+        if (this.qtAchat < 100) {
+          this.click = true;
+        }
+        else {
+          this.click = false;
+        }
+        break;
+
+      case "MAX":
+        if (this.qtAchat <= 0) {
           this.click = true;
         }
         else {

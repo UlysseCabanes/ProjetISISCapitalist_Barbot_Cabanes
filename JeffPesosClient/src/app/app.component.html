@@ -68,7 +68,7 @@
                     <div class="managerCible"> {{ world.products.product[manager.idcible-1].name }} </div>
                     <div class="managerCost"> {{ manager.seuil}} </div>
                 </div>
-                <button class="hireButton" (click)="hireManager(manager)" [disabled]="manager.seuil > world.money"
+                <button class="hireButton" (click)="hireManager(manager)" [disabled]="manager.seuil > world.money || world.products.product[manager.idcible-1].quantite == 0"
                     [ngClass]="{'selectable' : (world.money >= manager.seuil)}">Hire !</button>
             </div>
         </div>

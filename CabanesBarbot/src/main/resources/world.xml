@@ -22,7 +22,7 @@ Star Wars World
       <croissance>1.07</croissance>
       <revenu>1</revenu>
       <vitesse>1000</vitesse>
-      <quantite>0</quantite>
+      <quantite>1</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
       <palliers>
@@ -105,7 +105,7 @@ Star Wars World
       <cout>45</cout>
       <croissance>1.07</croissance>
       <revenu>9</revenu>
-      <vitesse>2000</vitesse>
+      <vitesse>4000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -147,7 +147,7 @@ Star Wars World
       <cout>150</cout>
       <croissance>1.07</croissance>
       <revenu>30</revenu>
-      <vitesse>2000</vitesse>
+      <vitesse>8000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -189,7 +189,7 @@ Star Wars World
       <cout>450</cout>
       <croissance>1.07</croissance>
       <revenu>90</revenu>
-      <vitesse>1000</vitesse>
+      <vitesse>16000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -231,7 +231,7 @@ Star Wars World
       <cout>1500</cout>
       <croissance>1.07</croissance>
       <revenu>300</revenu>
-      <vitesse>2000</vitesse>
+      <vitesse>36000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>

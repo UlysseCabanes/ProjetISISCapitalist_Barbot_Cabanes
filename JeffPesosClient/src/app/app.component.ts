@@ -17,6 +17,7 @@ export class AppComponent {
   money = 0;
   username = 'Captain' + Math.floor(Math.random() * 10000);
   service: any;
+  showManagers: boolean = false;
 
   constructor(service: RestserviceService, private snackBar: MatSnackBar) {
     this.server = service.getServer;
@@ -29,13 +30,10 @@ export class AppComponent {
     this.username = localStorage.getItem("username") || '';
     });
   }
-
-  showManagers: boolean = false;
-
   //Engager un manager
   hireManager(manager: Pallier) {
     //Si l'argent est suffisant
-    if (this.world.money >= manager.seuil) {
+    if (this.world.money >= manager.seuil && this.world.products.product[manager.idcible-1].quantite > 0) {
       //Décrémentation de l'argent
       this.world.money -= manager.seuil;
       //Débloquer le manager
