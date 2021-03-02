@@ -127,6 +127,7 @@ button:enabled:hover {
 }
 .hireButton:disabled {
     margin: auto 0 auto 0;
+    cursor: default;
     padding: 5px;
     background-color: #0153F7;
     color: #BFBFBF;
