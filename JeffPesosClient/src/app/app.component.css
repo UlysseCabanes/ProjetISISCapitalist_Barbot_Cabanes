@@ -1,3 +1,4 @@
+/* https://knowyourmeme.com/editorials/heres-your-collection-of-lego-star-wars-profile-pictures */
 button:enabled:hover {
     filter: brightness(85%);
 }
@@ -25,8 +26,6 @@ button:enabled:hover {
     padding: 5px;
     color: white;
     font-size: medium;
-    -webkit-text-stroke: 0.2px;
-    -webkit-text-stroke-color: black;
 }
 #multiButton {
     cursor: pointer;
@@ -51,10 +50,6 @@ button:enabled:hover {
     box-shadow: 0 7px 5px #00467D;
     border: solid black 1px;
     padding: 10px;
-}
-.menuTitle {
-    -webkit-text-stroke: 0.3px;
-    -webkit-text-stroke-color: black;
 }
 /* Fenêtre des mnagers */
 .modal { 
