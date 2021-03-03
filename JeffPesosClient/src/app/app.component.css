@@ -92,18 +92,10 @@ button:enabled:hover {
 .selectable {
     cursor: pointer;
 }
+
 /* Managers */
 .managersLayout {
-<<<<<<< HEAD
     display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.managerLayout, .angelsLayout {
-=======
->>>>>>> parent of d97476f (Prochain revenu)
-    display: flex;
-    width: 400px;
-    margin-top: 10px;
     grid-template-columns: 1fr 1fr;
 }
 /* Image des managers */
