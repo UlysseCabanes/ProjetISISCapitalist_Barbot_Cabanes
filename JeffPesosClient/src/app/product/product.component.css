@@ -15,8 +15,6 @@
     font-size: x-large;
     color: white;
     margin-top: 10px;
-    -webkit-text-stroke: 0.3px;
-    -webkit-text-stroke-color: black;
 }
 .product {
     display: grid;
@@ -35,6 +33,9 @@
     border: solid black 1px;
     cursor: pointer;
     font-size: medium;
+}
+#coutProduit, #revenuProduit, #nbProduit {
+    margin-left: 10px;
 }
 #achatButton:hover {
     filter: brightness(85%);

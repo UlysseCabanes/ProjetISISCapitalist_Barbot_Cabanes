@@ -23,9 +23,17 @@
     <div class="menu"> 
         <p class="menuTitle">Menu</p>
         <button class="managersButton" mat-raised-button color="primary" [matBadge]="badgeManagers" 
+<<<<<<< HEAD
+<<<<<<< HEAD
         [matBadgeHidden]="badgeManagers==0" (click)="showManagers = !showManagers" (click)="showAngels = false">Managers</button>
         <button class="angelsButton" mat-raised-button color="primary" [matBadge]="badgeAngels" 
         [matBadgeHidden]="badgeAngels==0" (click)="showAngels = !showAngels" (click)="showManagers = false">Angels</button>
+=======
+        [matBadgeHidden]="badgeManagers==0" (click)="showManagers = !showManagers">Managers</button>
+>>>>>>> parent of d97476f (Prochain revenu)
+=======
+        [matBadgeHidden]="badgeManagers==0" (click)="showManagers = !showManagers">Managers</button>
+>>>>>>> parent of d97476f (Prochain revenu)
     </div>
     <div class="products">
         <div class="product col-md-6">
@@ -52,6 +60,14 @@
             <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[5]"
                 (notifyProduction)="onProductionDone($event)" (notifyAchat)="onAchatDone($event)"></app-product>
         </div>
+        <div class="product col-md-6"> 
+            <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[6]"
+                (notifyProduction)="onProductionDone($event)" (notifyAchat)="onAchatDone($event)"></app-product>
+        </div>
+        <div class="product col-md-6"> 
+            <app-product [money]="world.money" [qtmulti]="qtmulti" [prod]="world.products.product[7]"
+                (notifyProduction)="onProductionDone($event)" (notifyAchat)="onAchatDone($event)"></app-product>
+        </div>
     </div>
 </div>
 
@@ -59,9 +75,9 @@
     <div>
         <h1 class="title">Star Wars world managers</h1>
     </div>
-    <div>
+    <div class="managersLayout">
         <div *ngFor="let manager of world.managers.pallier">
-            <div *ngIf="!manager.unlocked" class="managersLayout">
+            <div *ngIf="!manager.unlocked" class="managerLayout col-md-6">
                 <div>
                     <div class="managersLogo"><img class="round" [attr.src]="server+manager.logo" /> </div>
                 </div>
