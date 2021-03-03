@@ -63,6 +63,7 @@ export class AppComponent {
     //Mise à jour de la valeur du badge des managers
     this.updateManagersBadges();
   }
+  
   //Valeur du badge des managers
   badgeManagers = 0;
   //Mettre à jour le badge des managers
