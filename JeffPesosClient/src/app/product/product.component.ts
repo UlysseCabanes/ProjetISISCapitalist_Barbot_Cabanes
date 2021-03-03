@@ -54,9 +54,6 @@ export class ProductComponent implements OnInit {
     this.coutProduit = this.product.cout;
     this.baseRevenu = this.product.revenu;
     this.prochainPallier = this.product.palliers.pallier[0];
-    if(this.product.quantite == 0){
-      this.product.revenu = 0;
-    }
   }
 
   @Output() notifyAchat: EventEmitter<World> = new
@@ -78,8 +75,6 @@ export class ProductComponent implements OnInit {
       this.product.timeleft = this.product.vitesse;
       this.lastUpdate = Date.now();
     }
-    this.calcMaxCanBuy();
-    this.disableOnClick();
   }
   calcScore() {
     if (this.product.managerUnlocked && this.product.timeleft == 0) {
@@ -114,22 +109,19 @@ export class ProductComponent implements OnInit {
         this.product.quantite += 1;
         this.product.revenu += this.baseRevenu;
         break;
-
-      case "x10":
+        case "x10":
         this.totalAchat = this.product.cout * ((1 - Math.pow(this.product.croissance, 10)) / (1 - this.product.croissance));
         this.product.cout = Math.pow(this.product.croissance, 10) * this.product.cout;
         this.product.quantite += 10;
         this.product.revenu += this.baseRevenu * 10;
         break;
-
-      case "x100":
+        case "x100":
         this.totalAchat = this.product.cout * ((1 - Math.pow(this.product.croissance, 100)) / (1 - this.product.croissance));
         this.product.cout = Math.pow(this.product.croissance, 100) * this.product.cout;
         this.product.quantite += 100;
         this.product.revenu += this.baseRevenu * 100;
         break;
-
-      case "MAX":
+        case "MAX":
         this.totalAchat = this.product.cout * ((1 - Math.pow(this.product.croissance, this.qtAchat)) / (1 - this.product.croissance));
         this.product.cout = Math.pow(this.product.croissance, this.qtAchat) * this.product.cout;
         this.product.quantite += this.qtAchat;
@@ -144,11 +136,11 @@ export class ProductComponent implements OnInit {
     this.disableOnClick();
     /* Unlocks */
     let lesPalliers = this.product.palliers.pallier;
-    /* Débloquer un pallier lorsque la quantité de produits requise est atteinte */
-    /* Déterminer le prochain pallier à atteindre pour ce produit */
     for (let i = 0; i < lesPalliers.length; i++) {
       if (this.product.quantite >= lesPalliers[i].seuil) {
+        /* Débloquer un pallier lorsque la quantité de produits requise est atteinte */
         lesPalliers[i].unlocked = true;
+        /* Déterminer le prochain pallier à atteindre pour ce produit */
         this.prochainPallier = lesPalliers[i+1];
       }
     }
