@@ -15,7 +15,7 @@ export class AppComponent {
   title = 'JeffPesosClient';
   qtmulti = "x1";
   money = 0;
-  username = 'Captain' + Math.floor(Math.random() * 10000);
+  username = "";
   service: any;
   showManagers: boolean = false;
 
@@ -27,7 +27,7 @@ export class AppComponent {
     //Mettre à jour la valeur du badge des managers 
     //dès le chargement de la page
     this.updateManagersBadges();
-    this.username = localStorage.getItem("username") || '';
+    this.username = localStorage.getItem("username") || 'Captain' + Math.floor(Math.random() * 10000);
     });
   }
   //Engager un manager

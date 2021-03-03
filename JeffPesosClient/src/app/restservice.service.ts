@@ -7,7 +7,7 @@ import { World, Pallier, Product } from './world';
 })
 export class RestserviceService {
   server = "http://localhost:8080/";
-  user = "";
+  user = localStorage.getItem("username") || 'Captain' + Math.floor(Math.random() * 10000);
   constructor(private http: HttpClient) { }
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
