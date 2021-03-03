@@ -3,7 +3,7 @@
 Star Wars World
 -->
 
-<world xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='../java/com/example/Jeff_Pesos_Simulator/worldSchema.xsd'>
+<world xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='../java/com/example/CabanesBarbot/worldSchema.xsd'>
   <name>StarWars</name>
   <logo>icones/legoStarWarsLogo.png</logo>
   <money>100000</money>
