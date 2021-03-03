@@ -15,11 +15,6 @@
             <span *ngSwitchCase="'x100'" id="coutProduit"> Coût : {{coutProduit|number}}</span>
             <span *ngSwitchCase="'MAX'" id="coutProduit"> Coût : {{coutProduit|number}}</span>
         </div>
-        <span *ngIf="this.product.quantite >= 1" id="revenuProduit"> Revenu actuel : {{product.revenu}}</span>
-        <span *ngIf="1 > this.product.quantite" id="revenuProduit"> Revenu actuel : {{product.revenu - baseRevenu}}</span>
-        <span *ngIf="this.product.quantite >= 1" id="nextRevenuProduit"> Prochain revenu : {{nextRevenu|number}}</span>
-        <span *ngIf="1 > this.product.quantite" id="nextRevenuProduit"> Prochain revenu : {{nextRevenu - baseRevenu}}</span>
-        <br>
-        <span id="nbProduit">{{product.quantite}}/{{prochainPallier.seuil}}</span>
+        <span id="nbProduit">Nombres de produits achetés : {{product.quantite}}/{{prochainPallier.seuil}} </span>
     </span>
 </div>
