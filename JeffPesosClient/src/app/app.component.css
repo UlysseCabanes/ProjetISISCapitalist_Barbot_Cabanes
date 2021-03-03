@@ -1,4 +1,3 @@
-/* https://knowyourmeme.com/editorials/heres-your-collection-of-lego-star-wars-profile-pictures */
 button:enabled:hover {
     filter: brightness(85%);
 }
@@ -26,6 +25,8 @@ button:enabled:hover {
     padding: 5px;
     color: white;
     font-size: medium;
+    -webkit-text-stroke: 0.2px;
+    -webkit-text-stroke-color: black;
 }
 #multiButton {
     cursor: pointer;
@@ -51,7 +52,12 @@ button:enabled:hover {
     border: solid black 1px;
     padding: 10px;
 }
+
 /* Fenêtre des managers */
+.menuTitle {
+    -webkit-text-stroke: 0.3px;
+    -webkit-text-stroke-color: black;
+}
 .modal { 
     position: fixed; /* reste en place */ 
     z-index: 2; /* au dessus du reste */ 
@@ -92,15 +98,9 @@ button:enabled:hover {
 .selectable {
     cursor: pointer;
 }
-/* Managers */
-.managersLayout {
-<<<<<<< HEAD
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
+/* Managers and angels */
+
 .managerLayout, .angelsLayout {
-=======
->>>>>>> parent of d97476f (Prochain revenu)
     display: flex;
     width: 400px;
     margin-top: 10px;
