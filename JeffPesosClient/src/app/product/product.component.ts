@@ -74,10 +74,16 @@ export class ProductComponent implements OnInit {
     if (this._qtmulti && this.product) this.calcMaxCanBuy(); this.showProductPrice(); this.disableOnClick();
   }
   startFabrication() {
+    if (this.product.palliers.pallier[this.product.id-1].unlocked){
+      if (this.product.palliers.pallier[this.product.id-1].typeratio == "vitesse"){
+        //this.product.vitesse = this.product.vitesse* this.product.palliers.pallier[this.product.id-1].ratio;
+      }
+    }
     if (this.product.quantite != 0) {
       this.product.timeleft = this.product.vitesse;
       this.lastUpdate = Date.now();
     }
+    this.showProductPrice();
     this.calcMaxCanBuy();
     this.disableOnClick();
   }
@@ -143,13 +149,12 @@ export class ProductComponent implements OnInit {
     this.calcMaxCanBuy();
     this.disableOnClick();
     /* Unlocks */
-    let lesPalliers = this.product.palliers.pallier;
     /* Débloquer un pallier lorsque la quantité de produits requise est atteinte */
     /* Déterminer le prochain pallier à atteindre pour ce produit */
-    for (let i = 0; i < lesPalliers.length; i++) {
-      if (this.product.quantite >= lesPalliers[i].seuil) {
-        lesPalliers[i].unlocked = true;
-        this.prochainPallier = lesPalliers[i+1];
+    for (let i = 0; i < this.product.palliers.pallier.length; i++) {
+      if (this.product.quantite >= this.product.palliers.pallier[i].seuil) {
+        this.product.palliers.pallier[i].unlocked = true;
+        this.prochainPallier = this.product.palliers.pallier[i+1];
       }
     }
   }
