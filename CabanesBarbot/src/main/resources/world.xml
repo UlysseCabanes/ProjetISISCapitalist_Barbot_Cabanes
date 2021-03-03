@@ -432,15 +432,10 @@ Star Wars World
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
     </pallier>
-    <!-- Cash upgrade 3 for the blaster -->
+    <!-- Cash upgrade 2 for the blaster -->
     <pallier>
-<<<<<<< HEAD
-      <name>cashUpgradeBlaster3</name>
-      <logo>icones/blaster.jpg</logo>
-=======
       <name>cashUpgradeBlaster2</name>
       <logo>icones/blaster.jpeg</logo>
->>>>>>> parent of d97476f (Prochain revenu)
       <seuil>1500</seuil>
       <idcible>3</idcible>
       <ratio>1.5</ratio>
@@ -487,7 +482,6 @@ Star Wars World
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
     </pallier>
-<<<<<<< HEAD
     <!-- Cash upgrade 1 for the clone tooper -->
     <pallier>
       <name>cashUpgradeCloneTrooper1</name>
@@ -608,8 +602,6 @@ Star Wars World
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
     </pallier>
-=======
->>>>>>> parent of d97476f (Prochain revenu)
     <!-- Cash upgrade 1 for all products -->
     <pallier>
       <name>cashUpgradeAll1</name>
