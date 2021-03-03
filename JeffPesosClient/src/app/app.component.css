@@ -78,8 +78,10 @@ button:enabled:hover {
     bottom: -10px; 
 }
 /* Menu */
-.managersButton {
+.managersButton, .angelsButton {
+    display:block;
     padding: 5px;
+    margin-bottom: 15px;
     cursor: pointer;
     background-color: #0153F7;
     border: none;
@@ -91,7 +93,7 @@ button:enabled:hover {
     cursor: pointer;
 }
 /* Managers */
-.managersLayout {
+.managersLayout, .angelsLayout {
     display: flex;
     width: 400px;
     margin-top: 10px;
@@ -103,15 +105,15 @@ button:enabled:hover {
     border-radius: 50% 
 }
 /* Nom, produit cible et prix des managers */
-.managersAttributes {
+.managersAttributes, .angelsAttributes {
     margin: auto;
 }
-.managerName, .managerCible, .managerCost {
+.managerName, .managerCible, .managerCost, .angelName, .angelCible, .angelCost {
     margin: 0 auto 0 auto;
     width: fit-content;
 }
 /* Bouton d'engagement */
-.hireButton:enabled {
+.hireButton:enabled, .buyAngelButton:enabled {
     margin: auto 0 auto 0;
     padding: 5px;
     cursor: pointer;
@@ -120,7 +122,7 @@ button:enabled:hover {
     color:white;
     box-shadow: 2px 2px 5px black;
 }
-.hireButton:disabled {
+.hireButton:disabled, .buyAngelButton:disabled {
     margin: auto 0 auto 0;
     cursor: default;
     padding: 5px;
@@ -151,7 +153,7 @@ button:enabled:hover {
     grid-template-columns: 1fr 1fr;
     background-color: #D01012;
     height: 100px;
-    width: 400px;
+    width: 500px;
     box-shadow: 0 7px 5px #00467D;
     border: solid black 1px;
     margin-bottom: 4.5%;

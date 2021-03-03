@@ -19,6 +19,7 @@ export class ProductComponent implements OnInit {
   coutProduit = 0;
   totalAchat = 0;
   baseRevenu = 0;
+  nextRevenu = 0;
   color: String = '';
   click : boolean = false;
   prochainPallier: Pallier = new Pallier();
@@ -53,6 +54,7 @@ export class ProductComponent implements OnInit {
     this.product = value;
     this.coutProduit = this.product.cout;
     this.baseRevenu = this.product.revenu;
+    this.nextRevenu = this.product.revenu + this.baseRevenu;
     this.prochainPallier = this.product.palliers.pallier[0];
   }
 
@@ -107,7 +109,10 @@ export class ProductComponent implements OnInit {
         this.totalAchat = this.product.cout;
         this.product.cout = Math.pow(this.product.croissance, 1) * this.product.cout;
         this.product.quantite += 1;
-        this.product.revenu += this.baseRevenu;
+        if (this.product.quantite > 1) {
+          this.product.revenu += this.baseRevenu;
+        }
+        this.nextRevenu = this.product.revenu + this.baseRevenu;
         break;
 
       case "x10":
@@ -115,6 +120,7 @@ export class ProductComponent implements OnInit {
         this.product.cout = Math.pow(this.product.croissance, 10) * this.product.cout;
         this.product.quantite += 10;
         this.product.revenu += this.baseRevenu * 10;
+        this.nextRevenu = this.product.revenu + this.baseRevenu;
         break;
 
       case "x100":
@@ -122,13 +128,15 @@ export class ProductComponent implements OnInit {
         this.product.cout = Math.pow(this.product.croissance, 100) * this.product.cout;
         this.product.quantite += 100;
         this.product.revenu += this.baseRevenu * 100;
+        this.nextRevenu = this.product.revenu + this.baseRevenu;
         break;
 
       case "MAX":
         this.totalAchat = this.product.cout * ((1 - Math.pow(this.product.croissance, this.qtAchat)) / (1 - this.product.croissance));
         this.product.cout = Math.pow(this.product.croissance, this.qtAchat) * this.product.cout;
         this.product.quantite += this.qtAchat;
-        this.product.revenu += this.baseRevenu * this.qtAchat;
+        this.product.revenu += this.baseRevenu * (this.qtAchat - 1);
+        this.nextRevenu = this.product.revenu + this.baseRevenu;
         break;
     }
     this._money -= this.totalAchat;
