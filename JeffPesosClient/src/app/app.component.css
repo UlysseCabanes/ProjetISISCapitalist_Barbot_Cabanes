@@ -95,10 +95,13 @@ button:enabled:hover {
 /* Managers */
 .managersLayout {
 <<<<<<< HEAD
+<<<<<<< HEAD
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 .managerLayout, .angelsLayout {
+=======
+>>>>>>> parent of d97476f (Prochain revenu)
 =======
 >>>>>>> parent of d97476f (Prochain revenu)
     display: flex;
