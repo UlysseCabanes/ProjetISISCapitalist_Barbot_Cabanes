@@ -13,9 +13,93 @@ Star Wars World
   <angelbonus>0</angelbonus>
   <lastupdate>0</lastupdate>
   <products>
-    <!-- Blaster -->
+      <!-- Anakin skywalker (Slave) -->
     <product>
       <id>1</id>
+      <name>Anakin Skywalker (Slave)</name>
+      <logo>icones/anakinSkywalkerSlave.jpg</logo>
+      <cout>2</cout>
+      <croissance>1.07</croissance>
+      <revenu>0.5</revenu>
+      <vitesse>1000</vitesse>
+      <quantite>1</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>pallierAnakinSkywalkerSlave1</name>
+          <logo>icones/anakinSkywalkerSlave.jpg</logo>
+          <seuil>25</seuil>
+          <idcible>1</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallierAnakinSkywalkerSlave2</name>
+          <logo>icones/anakinSkywalkerSlave.jpg</logo>
+          <seuil>50</seuil>
+          <idcible>1</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallierAnakinSkywalkerSlave3</name>
+          <logo>icones/anakinSkywalkerSlave.jpg</logo>
+          <seuil>100</seuil>
+          <idcible>1</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+    <!-- Astromech droid -->
+    <product>
+      <id>2</id>
+      <name>Astromech droid</name>
+      <logo>icones/astromechDroid.jpg</logo>
+      <cout>5</cout>
+      <croissance>1.07</croissance>
+      <revenu>1</revenu>
+      <vitesse>1000</vitesse>
+      <quantite>1</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>pallierAstromechDroid1</name>
+          <logo>icones/astromechDroid.jpg</logo>
+          <seuil>25</seuil>
+          <idcible>1</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallierAstromechDroid2</name>
+          <logo>icones/astromechDroid.jpg</logo>
+          <seuil>50</seuil>
+          <idcible>1</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallierAstromechDroid3</name>
+          <logo>icones/astromechDroid.jpg</logo>
+          <seuil>100</seuil>
+          <idcible>1</idcible>
+          <ratio>0.75</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+    <!-- Blaster -->
+    <product>
+      <id>3</id>
       <name>Blaster</name>
       <logo>icones/blaster.jpg</logo>
       <cout>5</cout>
@@ -57,7 +141,7 @@ Star Wars World
     </product>
     <!-- Lightsaber -->
     <product>
-      <id>2</id>
+      <id>4</id>
       <name>Lightsaber</name>
       <logo>icones/lightsaber.jpg</logo>
       <cout>15</cout>
@@ -99,7 +183,7 @@ Star Wars World
     </product>
      <!-- Clone trooper -->
     <product>
-      <id>3</id>
+      <id>5</id>
       <name>Clone trooper</name>
       <logo>icones/cloneTrooper.jpg</logo>
       <cout>45</cout>
@@ -141,7 +225,7 @@ Star Wars World
     </product>
     <!-- X-wing -->
     <product>
-      <id>4</id>
+      <id>6</id>
       <name>X-wing</name>
       <logo>icones/x-wing.jpg</logo>
       <cout>150</cout>
@@ -183,7 +267,7 @@ Star Wars World
     </product>
     <!-- Star destroyer -->
     <product>
-      <id>5</id>
+      <id>7</id>
       <name>Star destroyer</name>
       <logo>icones/starDestroyer.jpg</logo>
       <cout>450</cout>
@@ -225,7 +309,7 @@ Star Wars World
     </product>
     <!-- Death Star -->
     <product>
-      <id>6</id>
+      <id>8</id>
       <name>Death Star</name>
       <logo>icones/deathStar.jpg</logo>
       <cout>1500</cout>
@@ -278,22 +362,82 @@ Star Wars World
     </pallier>
   </allunlocks>
   <upgrades>
-    <!-- Cash upgrade 1 for the blaster -->
+    <!-- Cash upgrade 1 for Anakin Skywalker (Slave) -->
     <pallier>
-      <name>cashUpgradeBlaster1</name>
-      <logo>icones/blaster.jpg</logo>
+      <name>cashUpgradeAnakinSkywalkerSlave1</name>
+      <logo>icones/anakinSkywalkerSlave.jpg</logo>
       <seuil>1000</seuil>
       <idcible>1</idcible>
       <ratio>1.25</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
     </pallier>
-    <!-- Cash upgrade 2 for the blaster -->
+    <!-- Cash upgrade 2 for Anakin Skywalker (Slave) -->
     <pallier>
-      <name>cashUpgradeBlaster2</name>
+      <name>cashUpgradeAnakinSkywalkerSlave2</name>
+      <logo>icones/anakinSkywalkerSlave.jpg</logo>
+      <seuil>1000</seuil>
+      <idcible>1</idcible>
+      <ratio>1.25</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <!-- Cash upgrade 3 for Anakin Skywalker (Slave) -->
+    <pallier>
+      <name>cashUpgradeAnakinSkywalkerSlave3</name>
+      <logo>icones/anakinSkywalkerSlave.jpg</logo>
+      <seuil>1000</seuil>
+      <idcible>1</idcible>
+      <ratio>1.25</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <!-- Cash upgrade 1 for astromech droid -->
+    <pallier>
+      <name>cashUpgradeAstromechDroid1</name>
+      <logo>icones/astromechDroid.jpg</logo>
+      <seuil>1000</seuil>
+      <idcible>2</idcible>
+      <ratio>1.25</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <!-- Cash upgrade 2 for astromech droid -->
+    <pallier>
+      <name>cashUpgradeAstromechDroid2</name>
+      <logo>icones/astromechDroid.jpg</logo>
+      <seuil>1000</seuil>
+      <idcible>2</idcible>
+      <ratio>1.25</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <!-- Cash upgrade 1 for astromech droid -->
+    <pallier>
+      <name>cashUpgradeAstromechDroid1</name>
+      <logo>icones/astromechDroid.jpg</logo>
+      <seuil>1000</seuil>
+      <idcible>2</idcible>
+      <ratio>1.25</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <!-- Cash upgrade 1 for the blaster -->
+    <pallier>
+      <name>cashUpgradeBlaster1</name>
+      <logo>icones/blaster.jpg</logo>
+      <seuil>1000</seuil>
+      <idcible>3</idcible>
+      <ratio>1.25</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <!-- Cash upgrade 3 for the blaster -->
+    <pallier>
+      <name>cashUpgradeBlaster3</name>
       <logo>icones/blaster.jpg</logo>
       <seuil>1500</seuil>
-      <idcible>1</idcible>
+      <idcible>3</idcible>
       <ratio>1.5</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -303,7 +447,7 @@ Star Wars World
       <name>cashUpgradeBlaster3</name>
       <logo>icones/blaster.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>1</idcible>
+      <idcible>3</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -313,7 +457,7 @@ Star Wars World
       <name>cashUpgradeLightsaber1</name>
       <logo>icones/lightsaber.jpg</logo>
       <seuil>1000</seuil>
-      <idcible>2</idcible>
+      <idcible>4</idcible>
       <ratio>1.25</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -323,7 +467,7 @@ Star Wars World
       <name>cashUpgradeLightsaber2</name>
       <logo>icones/lightsaber.jpg</logo>
       <seuil>1500</seuil>
-      <idcible>2</idcible>
+      <idcible>4</idcible>
       <ratio>1.5</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -333,7 +477,7 @@ Star Wars World
       <name>cashUpgradeLightsaber3</name>
       <logo>icones/lightsaber.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>2</idcible>
+      <idcible>4</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -343,7 +487,7 @@ Star Wars World
       <name>cashUpgradeCloneTrooper1</name>
       <logo>icones/cloneTrooper.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>3</idcible>
+      <idcible>5</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -353,7 +497,7 @@ Star Wars World
       <name>cashUpgradeCloneTrooper2</name>
       <logo>icones/cloneTrooper.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>3</idcible>
+      <idcible>5</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -363,7 +507,7 @@ Star Wars World
       <name>cashUpgradeCloneTrooper3</name>
       <logo>icones/cloneTrooper.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>3</idcible>
+      <idcible>5</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -373,7 +517,7 @@ Star Wars World
       <name>cashUpgradeXWing1</name>
       <logo>icones/x-wing.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>4</idcible>
+      <idcible>6</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -383,7 +527,7 @@ Star Wars World
       <name>cashUpgradeXWing2</name>
       <logo>icones/x-wing.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>4</idcible>
+      <idcible>6</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -393,7 +537,7 @@ Star Wars World
       <name>cashUpgradeXWing3</name>
       <logo>icones/x-wing.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>4</idcible>
+      <idcible>6</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -403,7 +547,7 @@ Star Wars World
       <name>cashUpgradeStarDestroyer1</name>
       <logo>icones/starDestroyer.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>5</idcible>
+      <idcible>7</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -413,7 +557,7 @@ Star Wars World
       <name>cashUpgradeStarDestroyer2</name>
       <logo>icones/starDestroyer.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>5</idcible>
+      <idcible>7</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -423,7 +567,7 @@ Star Wars World
       <name>cashUpgradeStarDestroyer3</name>
       <logo>icones/starDestroyer.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>5</idcible>
+      <idcible>7</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -433,7 +577,7 @@ Star Wars World
       <name>cashUpgradeDeathStar1</name>
       <logo>icones/deathStar.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>6</idcible>
+      <idcible>8</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -443,7 +587,7 @@ Star Wars World
       <name>cashUpgradeDeathStar2</name>
       <logo>icones/deathStar.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>6</idcible>
+      <idcible>8</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -453,7 +597,7 @@ Star Wars World
       <name>cashUpgradeDeathStar3</name>
       <logo>icones/deathStar.jpg</logo>
       <seuil>2000</seuil>
-      <idcible>6</idcible>
+      <idcible>8</idcible>
       <ratio>1.75</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
@@ -531,56 +675,82 @@ Star Wars World
   </angelupgrades>
   <!-- Managers -->
   <managers>
-    <pallier>
-      <name>Han Solo</name>
-      <logo>icones/hanSolo.jpg</logo>
-      <seuil>500</seuil>
+      <!-- Watto for Anakin Skaywalker (Slave) -->
+      <pallier>
+      <name>Watto</name>
+      <logo>icones/watto.jpg</logo>
+      <seuil>100</seuil>
       <idcible>1</idcible>
       <ratio>1.25</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
     </pallier>
-    <pallier>
-      <name>Mace Windu</name>
-      <logo>icones/maceWindu.jpg</logo>
-      <seuil>1000</seuil>
+    <!-- Jawa for astromech droid -->
+      <pallier>
+      <name>Jawa</name>
+      <logo>icones/jawa.jpg</logo>
+      <seuil>200</seuil>
       <idcible>2</idcible>
       <ratio>1.25</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
     </pallier>
+    <!-- Han Solo for blaster -->
     <pallier>
-      <name>Lama Su</name>
-      <logo>icones/lamaSu.jpg</logo>
-      <seuil>2000</seuil>
+      <name>Han Solo</name>
+      <logo>icones/hanSolo.jpg</logo>
+      <seuil>500</seuil>
       <idcible>3</idcible>
       <ratio>1.25</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
     </pallier>
+    <!-- Mace Windu for lightsaber -->
+    <pallier>
+      <name>Mace Windu</name>
+      <logo>icones/maceWindu.jpg</logo>
+      <seuil>1000</seuil>
+      <idcible>4</idcible>
+      <ratio>1.25</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <!-- Lama Su for clone trooper -->
+    <pallier>
+      <name>Lama Su</name>
+      <logo>icones/lamaSu.jpg</logo>
+      <seuil>2000</seuil>
+      <idcible>5</idcible>
+      <ratio>1.25</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <!-- Luke Skywalker for x-wing -->
     <pallier>
       <name>Luke Skywalker</name>
       <logo>icones/lukeSkywalker.jpg</logo>
       <seuil>4000</seuil>
-      <idcible>4</idcible>
+      <idcible>6</idcible>
       <ratio>1.5</ratio>
       <typeratio>vitesse</typeratio>
       <unlocked>false</unlocked>
     </pallier>
+    <!-- Imperial officer for star destroyer -->
     <pallier>
       <name>Imperial officer</name>
       <logo>icones/imperialOfficer.jpg</logo>
       <seuil>8000</seuil>
-      <idcible>5</idcible>
+      <idcible>7</idcible>
       <ratio>1.5</ratio>
       <typeratio>vitesse</typeratio>
       <unlocked>false</unlocked>
     </pallier>
+    <!-- Dark Sidious for Death Star -->
     <pallier>
-      <name>Darth Sidious</name>
-      <logo>icones/darthSidious.jpg</logo>
+      <name>Dark Sidious</name>
+      <logo>icones/darkSidious.jpg</logo>
       <seuil>16000</seuil>
-      <idcible>6</idcible>
+      <idcible>8</idcible>
       <ratio>1.5</ratio>
       <typeratio>vitesse</typeratio>
       <unlocked>false</unlocked>

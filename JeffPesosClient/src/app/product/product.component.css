@@ -34,6 +34,9 @@
     cursor: pointer;
     font-size: medium;
 }
+#coutProduit, #revenuProduit, #nbProduit {
+    margin-left: 10px;
+}
 #achatButton:hover {
     filter: brightness(85%);
 }
