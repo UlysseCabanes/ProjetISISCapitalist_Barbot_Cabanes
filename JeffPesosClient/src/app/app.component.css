@@ -80,6 +80,7 @@ button:enabled:hover {
     bottom: -10px; 
 }
 /* Menu */
+.managersButton {
     padding: 5px;
     cursor: pointer;
     background-color: #0153F7;
@@ -93,10 +94,13 @@ button:enabled:hover {
 }
 /* Managers */
 .managersLayout {
+<<<<<<< HEAD
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 .managerLayout, .angelsLayout {
+=======
+>>>>>>> parent of d97476f (Prochain revenu)
     display: flex;
     width: 400px;
     margin-top: 10px;
@@ -109,12 +113,15 @@ button:enabled:hover {
     border-radius: 50% 
 }
 /* Nom, produit cible et prix des managers */
+.managersAttributes {
     margin: auto;
 }
+.managerName, .managerCible, .managerCost {
     margin: 0 auto 0 auto;
     width: fit-content;
 }
 /* Bouton d'engagement */
+.hireButton:enabled {
     margin: auto 0 auto 0;
     padding: 5px;
     cursor: pointer;
@@ -123,6 +130,7 @@ button:enabled:hover {
     color:white;
     box-shadow: 2px 2px 5px black;
 }
+.hireButton:disabled {
     margin: auto 0 auto 0;
     cursor: default;
     padding: 5px;
@@ -153,6 +161,7 @@ button:enabled:hover {
     grid-template-columns: 1fr 1fr;
     background-color: #D01012;
     height: 100px;
+    width: 400px;
     box-shadow: 0 7px 5px #00467D;
     border: solid black 1px;
     margin-bottom: 4.5%;

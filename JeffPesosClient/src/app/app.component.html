@@ -23,9 +23,13 @@
     <div class="menu"> 
         <p class="menuTitle">Menu</p>
         <button class="managersButton" mat-raised-button color="primary" [matBadge]="badgeManagers" 
+<<<<<<< HEAD
         [matBadgeHidden]="badgeManagers==0" (click)="showManagers = !showManagers" (click)="showAngels = false">Managers</button>
         <button class="angelsButton" mat-raised-button color="primary" [matBadge]="badgeAngels" 
         [matBadgeHidden]="badgeAngels==0" (click)="showAngels = !showAngels" (click)="showManagers = false">Angels</button>
+=======
+        [matBadgeHidden]="badgeManagers==0" (click)="showManagers = !showManagers">Managers</button>
+>>>>>>> parent of d97476f (Prochain revenu)
     </div>
     <div class="products">
         <div class="product col-md-6">
@@ -74,6 +78,9 @@
                     <div class="managersLogo"><img class="round" [attr.src]="server+manager.logo" /> </div>
                 </div>
                 <div class="managersAttributes">
+                    <div class="managerName"> {{ manager.name}} </div>
+                    <div class="managerCible"> {{ world.products.product[manager.idcible-1].name }} </div>
+                    <div class="managerCost"> {{ manager.seuil}} </div>
                 </div>
                 <button class="hireButton" (click)="hireManager(manager)" [disabled]="manager.seuil > world.money || world.products.product[manager.idcible-1].quantite == 0"
                     [ngClass]="{'selectable' : (world.money >= manager.seuil)}">Hire !</button>
