@@ -53,10 +53,6 @@ button:enabled:hover {
     padding: 10px;
 }
 
-.menuTitle {
-    -webkit-text-stroke: 0.3px;
-    -webkit-text-stroke-color: black;
-}
 .modal { 
     position: fixed; /* reste en place */ 
     z-index: 2; /* au dessus du reste */ 
