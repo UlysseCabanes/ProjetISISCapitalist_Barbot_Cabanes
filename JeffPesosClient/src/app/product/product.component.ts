@@ -54,9 +54,6 @@ export class ProductComponent implements OnInit {
     this.coutProduit = this.product.cout;
     this.baseRevenu = this.product.revenu;
     this.prochainPallier = this.product.palliers.pallier[0];
-    if(this.product.quantite == 0){
-      this.product.revenu = 0;
-    }
   }
 
   @Output() notifyAchat: EventEmitter<World> = new
@@ -78,8 +75,6 @@ export class ProductComponent implements OnInit {
       this.product.timeleft = this.product.vitesse;
       this.lastUpdate = Date.now();
     }
-    this.calcMaxCanBuy();
-    this.disableOnClick();
   }
   calcScore() {
     if (this.product.managerUnlocked && this.product.timeleft == 0) {

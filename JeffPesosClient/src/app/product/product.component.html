@@ -15,14 +15,7 @@
             <span *ngSwitchCase="'x100'" id="coutProduit"> Coût : {{coutProduit|number}}</span>
             <span *ngSwitchCase="'MAX'" id="coutProduit"> Coût : {{coutProduit|number}}</span>
         </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <span id="nbProduit">Nombres de produits : {{product.quantite}}/{{prochainPallier.seuil}} Revenu : {{product.revenu}} </span>
-=======
-        <span id="nbProduit">Nombres de produits achetés : {{product.quantite}}/{{prochainPallier.seuil}} </span>
->>>>>>> parent of d97476f (Prochain revenu)
-=======
-        <span id="nbProduit">Nombres de produits achetés : {{product.quantite}}/{{prochainPallier.seuil}} </span>
->>>>>>> parent of d97476f (Prochain revenu)
+        <span id="nbProduit">{{product.quantite}}/{{prochainPallier.seuil}}</span>
+        <span>Revenu : {{product.revenu}} </span>
     </span>
 </div>
