@@ -60,6 +60,8 @@ export class AppComponent {
   }
   onAchatDone(w : World){
     this.world.money = w.money;
+    //Mise à jour de la valeur du badge des managers
+    this.updateManagersBadges();
   }
   
   //Valeur du badge des managers
@@ -71,7 +73,7 @@ export class AppComponent {
     //Parcourir les managers
     for (let m of this.world.managers.pallier) {
       //Vérifier si l'argent possédé dépasse le prix du manager
-      if (this.world.money >= m.seuil && !m.unlocked) {
+      if (this.world.money >= m.seuil && !m.unlocked && this.world.products.product[m.idcible-1].quantite > 0) {
         //Incrémenter la valeur du badge
         this.badgeManagers += 1;
       }
