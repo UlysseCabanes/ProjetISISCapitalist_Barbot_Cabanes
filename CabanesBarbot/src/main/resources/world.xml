@@ -63,8 +63,8 @@ Star Wars World
       <cout>5</cout>
       <croissance>1.07</croissance>
       <revenu>1</revenu>
-      <vitesse>1000</vitesse>
-      <quantite>1</quantite>
+      <vitesse>2000</vitesse>
+      <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
       <palliers>
@@ -72,7 +72,7 @@ Star Wars World
           <name>pallierAstromechDroid1</name>
           <logo>icones/astromechDroid.jpg</logo>
           <seuil>25</seuil>
-          <idcible>1</idcible>
+          <idcible>2</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -81,7 +81,7 @@ Star Wars World
           <name>pallierAstromechDroid2</name>
           <logo>icones/astromechDroid.jpg</logo>
           <seuil>50</seuil>
-          <idcible>1</idcible>
+          <idcible>2</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -90,7 +90,7 @@ Star Wars World
           <name>pallierAstromechDroid3</name>
           <logo>icones/astromechDroid.jpg</logo>
           <seuil>100</seuil>
-          <idcible>1</idcible>
+          <idcible>2</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -105,8 +105,8 @@ Star Wars World
       <cout>5</cout>
       <croissance>1.07</croissance>
       <revenu>1</revenu>
-      <vitesse>1000</vitesse>
-      <quantite>1</quantite>
+      <vitesse>3000</vitesse>
+      <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
       <palliers>
@@ -114,7 +114,7 @@ Star Wars World
           <name>pallierBlaster1</name>
           <logo>icones/blaster.jpeg</logo>
           <seuil>25</seuil>
-          <idcible>1</idcible>
+          <idcible>3</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -123,7 +123,7 @@ Star Wars World
           <name>pallierBlaster2</name>
           <logo>icones/blaster.jpeg</logo>
           <seuil>50</seuil>
-          <idcible>1</idcible>
+          <idcible>3</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -132,7 +132,7 @@ Star Wars World
           <name>pallierBlaster3</name>
           <logo>icones/blaster.jpeg</logo>
           <seuil>100</seuil>
-          <idcible>1</idcible>
+          <idcible>3</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -147,7 +147,7 @@ Star Wars World
       <cout>15</cout>
       <croissance>1.07</croissance>
       <revenu>3</revenu>
-      <vitesse>2000</vitesse>
+      <vitesse>5000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -156,7 +156,7 @@ Star Wars World
           <name>pallierLightsaber1</name>
           <logo>icones/lightsaber.jpg</logo>
           <seuil>25</seuil>
-          <idcible>2</idcible>
+          <idcible>4</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -165,7 +165,7 @@ Star Wars World
           <name>pallierLightsaber2</name>
           <logo>icones/lightsaber.jpg</logo>
           <seuil>50</seuil>
-          <idcible>2</idcible>
+          <idcible>4</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -174,7 +174,7 @@ Star Wars World
           <name>pallierLightsaber3</name>
           <logo>icones/lightsaber.jpg</logo>
           <seuil>100</seuil>
-          <idcible>2</idcible>
+          <idcible>4</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -189,7 +189,7 @@ Star Wars World
       <cout>45</cout>
       <croissance>1.07</croissance>
       <revenu>9</revenu>
-      <vitesse>4000</vitesse>
+      <vitesse>8000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -198,7 +198,7 @@ Star Wars World
           <name>pallierLightsaber1</name>
           <logo>icones/lightsaber.jpg</logo>
           <seuil>25</seuil>
-          <idcible>2</idcible>
+          <idcible>5</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -207,7 +207,7 @@ Star Wars World
           <name>pallierLightsaber2</name>
           <logo>icones/lightsaber.jpg</logo>
           <seuil>50</seuil>
-          <idcible>2</idcible>
+          <idcible>5</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -216,7 +216,7 @@ Star Wars World
           <name>pallierLightsaber3</name>
           <logo>icones/lightsaber.jpg</logo>
           <seuil>100</seuil>
-          <idcible>2</idcible>
+          <idcible>5</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -231,7 +231,7 @@ Star Wars World
       <cout>150</cout>
       <croissance>1.07</croissance>
       <revenu>30</revenu>
-      <vitesse>8000</vitesse>
+      <vitesse>15000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -240,7 +240,7 @@ Star Wars World
           <name>pallierXWing1</name>
           <logo>icones/lightsaber.jpg</logo>
           <seuil>25</seuil>
-          <idcible>2</idcible>
+          <idcible>6</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -249,7 +249,7 @@ Star Wars World
           <name>pallierXWing2</name>
           <logo>icones/lightsaber.jpg</logo>
           <seuil>50</seuil>
-          <idcible>2</idcible>
+          <idcible>6</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -258,7 +258,7 @@ Star Wars World
           <name>pallierXWing3</name>
           <logo>icones/lightsaber.jpg</logo>
           <seuil>100</seuil>
-          <idcible>2</idcible>
+          <idcible>6</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -273,7 +273,7 @@ Star Wars World
       <cout>450</cout>
       <croissance>1.07</croissance>
       <revenu>90</revenu>
-      <vitesse>16000</vitesse>
+      <vitesse>25000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -282,7 +282,7 @@ Star Wars World
           <name>pallierBlaster1</name>
           <logo>icones/blaster.jpeg</logo>
           <seuil>25</seuil>
-          <idcible>1</idcible>
+          <idcible>7</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -291,7 +291,7 @@ Star Wars World
           <name>pallierBlaster2</name>
           <logo>icones/blaster.jpeg</logo>
           <seuil>50</seuil>
-          <idcible>1</idcible>
+          <idcible>7</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -300,7 +300,7 @@ Star Wars World
           <name>pallierBlaster3</name>
           <logo>icones/blaster.jpeg</logo>
           <seuil>100</seuil>
-          <idcible>1</idcible>
+          <idcible>7</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -315,7 +315,7 @@ Star Wars World
       <cout>1500</cout>
       <croissance>1.07</croissance>
       <revenu>300</revenu>
-      <vitesse>36000</vitesse>
+      <vitesse>40000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -324,7 +324,7 @@ Star Wars World
           <name>pallierDeathStar1</name>
           <logo>icones/lightsaber.jpg</logo>
           <seuil>25</seuil>
-          <idcible>2</idcible>
+          <idcible>8</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -333,7 +333,7 @@ Star Wars World
           <name>pallierDeathStar2</name>
           <logo>icones/lightsaber.jpg</logo>
           <seuil>50</seuil>
-          <idcible>2</idcible>
+          <idcible>8</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -342,7 +342,7 @@ Star Wars World
           <name>pallierDeathStar3</name>
           <logo>icones/lightsaber.jpg</logo>
           <seuil>100</seuil>
-          <idcible>2</idcible>
+          <idcible>8</idcible>
           <ratio>0.75</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>

@@ -13,21 +13,32 @@ export class RestserviceService {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
-   getWorld(): Promise<World> {
-    return this.http.get(this.server + "adventureisis/generic/world", {headers: this.setHeaders(this.user)})
-    .toPromise().catch(this.handleError);
+  getWorld(): Promise<World> {
+    return this.http.get(this.server + "adventureisis/generic/world", { headers: this.setHeaders(this.user) })
+      .toPromise().catch(this.handleError);
   };
-  get getServer(){
-     return this.server;
-   };
-  get getUser(){
+
+  putManager(manager: Pallier): Promise<Response> {
+    return this.http.put(this.server + "adventureisis/generic/manager", manager, { headers: this.setHeaders(this.user) })
+      .toPromise().catch(this.handleError);
+  };
+
+  putProduct(product: Product): Promise<Response> {
+    return this.http.put(this.server + "adventureisis/generic/product", product, { headers: this.setHeaders(this.user) })
+      .toPromise().catch(this.handleError);
+  };
+
+  get getServer() {
+    return this.server;
+  };
+  get getUser() {
     return this.user;
   };
-  set setUser(user: string)  {
+  set setUser(user: string) {
     this.user = user;
   };
-  private setHeaders(user: string): HttpHeaders { 
-    var headers = new HttpHeaders({ 'X-User': user }); 
-    return headers; 
+  private setHeaders(user: string): HttpHeaders {
+    var headers = new HttpHeaders({ 'X-User': user });
+    return headers;
   };
 }

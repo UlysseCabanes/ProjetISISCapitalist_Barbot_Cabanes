@@ -44,6 +44,8 @@ export class AppComponent {
       this.updateManagersBadges();
       //Afficher un message de confirmation d'engagement du manager
       this.hireMessage("Vous avez engagé " + manager.name + " comme manager !");
+
+      this.service.putManager(manager);
     }
   }
 
