@@ -21,8 +21,8 @@ export class ProductComponent implements OnInit {
   baseRevenu = 0;
   color: String = '';
   click : boolean = false;
-  prochainPallier: Pallier = new Pallier();
-  
+  prochainPallier = 0;
+  i = 0;
   constructor() {
 
   }
@@ -53,7 +53,7 @@ export class ProductComponent implements OnInit {
     this.product = value;
     this.coutProduit = this.product.cout;
     this.baseRevenu = this.product.revenu;
-    this.prochainPallier = this.product.palliers.pallier[0];
+    this.prochainPallier = this.product.palliers.pallier[0].seuil;
     if (this.product.quantite == 0){
       this.product.revenu =0;
     }
@@ -74,11 +74,6 @@ export class ProductComponent implements OnInit {
     if (this._qtmulti && this.product) this.calcMaxCanBuy(); this.showProductPrice(); this.disableOnClick();
   }
   startFabrication() {
-    if (this.product.palliers.pallier[this.product.id-1].unlocked){
-      if (this.product.palliers.pallier[this.product.id-1].typeratio == "vitesse"){
-        //this.product.vitesse = this.product.vitesse* this.product.palliers.pallier[this.product.id-1].ratio;
-      }
-    }
     if (this.product.quantite != 0) {
       this.product.timeleft = this.product.vitesse;
       this.lastUpdate = Date.now();
@@ -151,11 +146,14 @@ export class ProductComponent implements OnInit {
     /* Unlocks */
     /* Débloquer un pallier lorsque la quantité de produits requise est atteinte */
     /* Déterminer le prochain pallier à atteindre pour ce produit */
-    for (let i = 0; i < this.product.palliers.pallier.length; i++) {
-      if (this.product.quantite >= this.product.palliers.pallier[i].seuil) {
-        this.product.palliers.pallier[i].unlocked = true;
-        this.prochainPallier = this.product.palliers.pallier[i+1];
+    if (this.product.quantite >= this.product.palliers.pallier[this.i].seuil) {
+      this.product.palliers.pallier[this.i].unlocked = true;
+      
+      if (this.product.palliers.pallier[this.i].unlocked && this.product.palliers.pallier[this.i].typeratio == "vitesse"){
+        this.product.vitesse = this.product.vitesse* this.product.palliers.pallier[this.i].ratio;
       }
+      this.i += 1;
+      this.prochainPallier = this.product.palliers.pallier[this.i].seuil;
     }
   }
   showProductPrice() {

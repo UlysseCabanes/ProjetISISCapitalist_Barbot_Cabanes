@@ -46,7 +46,7 @@ export class AppComponent {
       this.hireMessage("Vous avez engagé " + manager.name + " comme manager !");
 
       this.service.putManager(manager);
-    }
+    } 
   }
 
   //Affichage du message de confirmation d'engagement du manager
@@ -57,6 +57,8 @@ export class AppComponent {
   onProductionDone(p : Product){
     //Incrémentation de l'argent
     this.world.money += p.revenu;
+
+    this.service.putProduct(p);
     //Mise à jour de la valeur du badge des managers
     this.updateManagersBadges();
   }
