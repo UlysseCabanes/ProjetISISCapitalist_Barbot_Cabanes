@@ -145,16 +145,9 @@ export class ProductComponent implements OnInit {
     this.calcMaxCanBuy();
     this.disableOnClick();
     /* Unlocks */
-    /* Débloquer un pallier lorsque la quantité de produits requise est atteinte */
-    /* Déterminer le prochain pallier à atteindre pour ce produit */
-    if (this.product.quantite >= this.product.palliers.pallier[this.i].seuil) {
-      this.product.palliers.pallier[this.i].unlocked = true;
-      
-      if (this.product.palliers.pallier[this.i].unlocked && this.product.palliers.pallier[this.i].typeratio == "vitesse"){
-        this.product.vitesse = this.product.vitesse* this.product.palliers.pallier[this.i].ratio;
-      }
-      this.i += 1;
-      this.prochainPallier = this.product.palliers.pallier[this.i].seuil;
+    /* Débloquer un pallier lorsque la quantité de produits requise est atteinte et déterminer le prochain pallier à atteindre pour ce produit */
+    /* Augmenter la vitesse de production du produit */
+    for (let j = 0;j < 3; j++) {
       if (this.product.quantite >= this.product.palliers.pallier[this.i].seuil) {
         this.product.palliers.pallier[this.i].unlocked = true;
         
@@ -163,15 +156,6 @@ export class ProductComponent implements OnInit {
         }
         this.i += 1;
         this.prochainPallier = this.product.palliers.pallier[this.i].seuil;
-        if (this.product.quantite >= this.product.palliers.pallier[this.i].seuil) {
-          this.product.palliers.pallier[this.i].unlocked = true;
-          
-          if (this.product.palliers.pallier[this.i].unlocked && this.product.palliers.pallier[this.i].typeratio == "vitesse"){
-            this.product.vitesse = this.product.vitesse* this.product.palliers.pallier[this.i].ratio;
-          }
-          this.i += 1;
-          this.prochainPallier = this.product.palliers.pallier[this.i].seuil;
-        }
       }
     }
     this.service.putProduct(this.product);
