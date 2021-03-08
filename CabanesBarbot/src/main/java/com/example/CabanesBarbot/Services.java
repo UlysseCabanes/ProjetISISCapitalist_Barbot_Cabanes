@@ -100,7 +100,6 @@ public class Services {
     public Boolean updateManager(String username, PallierType newmanager) throws FileNotFoundException {
         // aller chercher le monde qui correspond au joueur
         World world = getWorld(username);
-        System.out.println("oui");
         // trouver dans ce monde, le manager équivalent à celui passé
         // en paramètre
         PallierType manager = findManagerByName(world, newmanager.getName());

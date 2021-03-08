@@ -18,12 +18,12 @@ export class RestserviceService {
       .toPromise().catch(this.handleError);
   };
 
-  putManager(manager: Pallier): Promise<Response> {
+  putManager(manager: Pallier): Promise<Pallier> {
     return this.http.put(this.server + "adventureisis/generic/manager", manager, { headers: this.setHeaders(this.user) })
       .toPromise().catch(this.handleError);
   };
 
-  putProduct(product: Product): Promise<Response> {
+  putProduct(product: Product): Promise<Product> {
     return this.http.put(this.server + "adventureisis/generic/product", product, { headers: this.setHeaders(this.user) })
       .toPromise().catch(this.handleError);
   };

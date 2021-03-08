@@ -16,13 +16,12 @@ export class AppComponent {
   qtmulti = "x1";
   money = 0;
   username = "";
-  service: any;
   badgeManagers = 0;
   showManagers: boolean = false;
   badgeAngels = 0;
   showAngels: boolean = false;
 
-  constructor(service: RestserviceService, private snackBar: MatSnackBar) {
+  constructor(private service: RestserviceService, private snackBar: MatSnackBar) {
     this.server = service.getServer;
     service.getWorld().then(
     world => {
@@ -83,9 +82,8 @@ export class AppComponent {
   onProductionDone(p : Product){
     //Incrémentation de l'argent
     this.world.money += p.revenu;
-
-    this.service.putProduct(p);
-    //Mise à jour de la valeur des badges
+    
+    //Mise à jour de la valeur du badge des managers
     this.updateManagersBadges();
     this.updateAngelsBadges();
   }
@@ -145,6 +143,6 @@ export class AppComponent {
   }
   onUsernameChanged() {
     localStorage.setItem("username", this.username);
-    this.service.setUser(this.username);
+    this.service.user = this.username;
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { RestserviceService } from '../restservice.service';
 import { Product, World, Pallier } from '../world';
 
 @Component({
@@ -23,7 +24,7 @@ export class ProductComponent implements OnInit {
   click : boolean = false;
   prochainPallier = 0;
   i = 0;
-  constructor() {
+  constructor(private service : RestserviceService) {
 
   }
 
@@ -154,7 +155,26 @@ export class ProductComponent implements OnInit {
       }
       this.i += 1;
       this.prochainPallier = this.product.palliers.pallier[this.i].seuil;
+      if (this.product.quantite >= this.product.palliers.pallier[this.i].seuil) {
+        this.product.palliers.pallier[this.i].unlocked = true;
+        
+        if (this.product.palliers.pallier[this.i].unlocked && this.product.palliers.pallier[this.i].typeratio == "vitesse"){
+          this.product.vitesse = this.product.vitesse* this.product.palliers.pallier[this.i].ratio;
+        }
+        this.i += 1;
+        this.prochainPallier = this.product.palliers.pallier[this.i].seuil;
+        if (this.product.quantite >= this.product.palliers.pallier[this.i].seuil) {
+          this.product.palliers.pallier[this.i].unlocked = true;
+          
+          if (this.product.palliers.pallier[this.i].unlocked && this.product.palliers.pallier[this.i].typeratio == "vitesse"){
+            this.product.vitesse = this.product.vitesse* this.product.palliers.pallier[this.i].ratio;
+          }
+          this.i += 1;
+          this.prochainPallier = this.product.palliers.pallier[this.i].seuil;
+        }
+      }
     }
+    this.service.putProduct(this.product);
   }
   showProductPrice() {
     switch (this._qtmulti) {
