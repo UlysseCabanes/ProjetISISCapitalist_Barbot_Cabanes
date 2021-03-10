@@ -147,15 +147,16 @@ export class ProductComponent implements OnInit {
     /* Unlocks */
     /* Débloquer un pallier lorsque la quantité de produits requise est atteinte et déterminer le prochain pallier à atteindre pour ce produit */
     /* Augmenter la vitesse de production du produit */
-    for (let j = 0;j < 3; j++) {
-      if (this.product.quantite >= this.product.palliers.pallier[this.i].seuil) {
-        this.product.palliers.pallier[this.i].unlocked = true;
+    let palliersProduit = this.product.palliers.pallier;
+    for (let j = 0;j < palliersProduit.length; j++) {
+      if (this.product.quantite >= palliersProduit[this.i].seuil) {
+        palliersProduit[this.i].unlocked = true;
         
-        if (this.product.palliers.pallier[this.i].unlocked && this.product.palliers.pallier[this.i].typeratio == "vitesse"){
-          this.product.vitesse = this.product.vitesse* this.product.palliers.pallier[this.i].ratio;
+        if (palliersProduit[this.i].unlocked && palliersProduit[this.i].typeratio == "vitesse"){
+          this.product.vitesse = this.product.vitesse * palliersProduit[this.i].ratio;
         }
         this.i += 1;
-        this.prochainPallier = this.product.palliers.pallier[this.i].seuil;
+        this.prochainPallier = palliersProduit[this.i].seuil;
       }
     }
     this.service.putProduct(this.product);

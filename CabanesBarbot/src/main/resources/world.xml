@@ -28,7 +28,7 @@ Star Wars World
       <palliers>
         <pallier>
           <name>pallierBlaster1</name>
-          <logo>icones/blaster.jpeg</logo>
+          <logo>icones/blaster.jpg</logo>
           <seuil>25</seuil>
           <idcible>1</idcible>
           <ratio>0.75</ratio>
@@ -37,7 +37,7 @@ Star Wars World
         </pallier>
         <pallier>
           <name>pallierBlaster2</name>
-          <logo>icones/blaster.jpeg</logo>
+          <logo>icones/blaster.jpg</logo>
           <seuil>50</seuil>
           <idcible>1</idcible>
           <ratio>0.50</ratio>
@@ -46,7 +46,7 @@ Star Wars World
         </pallier>
         <pallier>
           <name>pallierBlaster3</name>
-          <logo>icones/blaster.jpeg</logo>
+          <logo>icones/blaster.jpg</logo>
           <seuil>100</seuil>
           <idcible>1</idcible>
           <ratio>0.25</ratio>
@@ -104,7 +104,7 @@ Star Wars World
       <logo>icones/cloneTrooper.jpg</logo>
       <cout>30</cout>
       <croissance>1.07</croissance>
-      <revenu>8</revenu>
+      <revenu>10</revenu>
       <vitesse>5000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
@@ -144,7 +144,7 @@ Star Wars World
       <id>4</id>
       <name>X-wing</name>
       <logo>icones/x-wing.jpg</logo>
-      <cout>100</cout>
+      <cout>90</cout>
       <croissance>1.07</croissance>
       <revenu>30</revenu>
       <vitesse>8000</vitesse>
@@ -541,11 +541,11 @@ Star Wars World
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
     </pallier>
-    <!-- Mace Windu for lightsaber -->
+    <!-- General Grievous for lightsaber -->
     <pallier>
-      <name>Mace Windu</name>
-      <logo>icones/maceWindu.jpg</logo>
-      <seuil>1000</seuil>
+      <name>General Grievous</name>
+      <logo>icones/generalGrievous.jpg</logo>
+      <seuil>1500</seuil>
       <idcible>2</idcible>
       <ratio>1.25</ratio>
       <typeratio>gain</typeratio>
@@ -555,7 +555,7 @@ Star Wars World
     <pallier>
       <name>Lama Su</name>
       <logo>icones/lamaSu.jpg</logo>
-      <seuil>2000</seuil>
+      <seuil>5000</seuil>
       <idcible>3</idcible>
       <ratio>1.25</ratio>
       <typeratio>gain</typeratio>
@@ -565,7 +565,7 @@ Star Wars World
     <pallier>
       <name>Luke Skywalker</name>
       <logo>icones/lukeSkywalker.jpg</logo>
-      <seuil>4000</seuil>
+      <seuil>15000</seuil>
       <idcible>4</idcible>
       <ratio>1.25</ratio>
       <typeratio>gain</typeratio>
@@ -575,7 +575,7 @@ Star Wars World
     <pallier>
       <name>Imperial officer</name>
       <logo>icones/imperialOfficer.jpg</logo>
-      <seuil>8000</seuil>
+      <seuil>50000</seuil>
       <idcible>5</idcible>
       <ratio>1.25</ratio>
       <typeratio>gain</typeratio>
@@ -585,7 +585,7 @@ Star Wars World
     <pallier>
       <name>Dark Sidious</name>
       <logo>icones/darkSidious.jpg</logo>
-      <seuil>16000</seuil>
+      <seuil>100000</seuil>
       <idcible>6</idcible>
       <ratio>1.25</ratio>
       <typeratio>gain</typeratio>

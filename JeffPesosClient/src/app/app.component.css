@@ -55,7 +55,7 @@ button:enabled:hover {
 .modal { 
     position: fixed; /* reste en place */ 
     z-index: 2; /* au dessus du reste */ 
-    width: fit-content; /* largeur */ 
+    width: 1000px; /* largeur */ 
     height: fit-content; /* hauteur */ 
     overflow: auto; /* barre de scroll si besoin */ 
     border: solid black 1px; 
@@ -66,8 +66,6 @@ button:enabled:hover {
     font-size: large;
     color: white;
     box-shadow: 7px 7px 5px #00467D;
-    display: grid;
-    grid-template-columns: 50% 50%;
 }
 /* Supperposition */
 .lesdeux { 
@@ -96,11 +94,11 @@ button:enabled:hover {
 }
 
 /* Managers */
-.managersLayout {
+.managersLayout, .angelsLayout {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.managerLayout, .angelsLayout {
+.managerLayout, .angelLayout {
     display: flex;
     width: 400px;
     margin-top: 10px;
@@ -139,6 +137,13 @@ button:enabled:hover {
     border: none;
     box-shadow: 2px 2px 5px black;
 }
+.hiredSign {
+    margin: auto 0 auto 0;
+    cursor: default;
+    padding: 5px;
+    background-color: #0153F7;
+    color: #BFBFBF;
+}
 /* Bouton de fermeture */
 .closeButton {
     cursor: pointer;
@@ -149,6 +154,7 @@ button:enabled:hover {
     font-size: medium;
     border: none;
     box-shadow: 2px 2px 5px black;
+    width: 50px;
 }
 /* Liste des produits */
 .products {

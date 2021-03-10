@@ -26,8 +26,7 @@ export class AppComponent {
     service.getWorld().then(
     world => {
     this.world = world;
-    //Mettre à jour la valeur du badge des managers 
-    //dès le chargement de la page
+    //Mettre à jour la valeur des badges dès le chargement de la page
     this.updateManagersBadges();
     this.updateAngelsBadges();
     this.username = localStorage.getItem("username") || 'Captain' + Math.floor(Math.random() * 10000);
@@ -36,7 +35,7 @@ export class AppComponent {
 
   //Engager un manager
   hireManager(manager: Pallier) {
-    //Si l'argent est suffisant
+    //Si l'argent est suffisant, le manager n'est pas débloqué et le joueur possède au moins un exemplaire du produit cible
     if (this.world.money >= manager.seuil && this.world.products.product[manager.idcible-1].quantite > 0) {
       //Décrémentation de l'argent
       this.world.money -= manager.seuil;
@@ -44,8 +43,9 @@ export class AppComponent {
       manager.unlocked = true;
       //Dans le produit aussi
       this.world.products.product[manager.idcible-1].managerUnlocked = true;
-      //Mise à jour de la valeur du badge des managers
+      //Mise à jour de la valeur des badges
       this.updateManagersBadges();
+      this.updateAngelsBadges();
       //Afficher un message de confirmation d'engagement du manager
       this.hireMessage("Vous avez engagé " + manager.name + " comme manager !");
 
@@ -61,8 +61,9 @@ export class AppComponent {
       this.world.money -= angel.seuil;
       //Débloquer l'ange
       angel.unlocked = true;
-      //Mise à jour de la valeur du badge des anges
+      //Mise à jour de la valeur des badges
       this.updateAngelsBadges();
+      this.updateManagersBadges();
       //Afficher un message de confirmation d'achat de l'ange
       this.buyAngelMessage("Vous avez acheté l'ange " + angel.name + " !");
     }
@@ -83,7 +84,7 @@ export class AppComponent {
     //Incrémentation de l'argent
     this.world.money += p.revenu;
     
-    //Mise à jour de la valeur du badge des managers
+    //Mise à jour de la valeur des badges
     this.updateManagersBadges();
     this.updateAngelsBadges();
   }
