@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { RestserviceService } from '../restservice.service';
 import { Product, World, Pallier } from '../world';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-product',
@@ -22,9 +23,9 @@ export class ProductComponent implements OnInit {
   baseRevenu = 0;
   color: String = '';
   click : boolean = false;
-  prochainPallier = 0;
+  prochainPallier: Pallier = new Pallier();
   i = 0;
-  constructor(private service : RestserviceService) {
+  constructor(private service : RestserviceService, private snackBar: MatSnackBar) {
 
   }
 
@@ -54,7 +55,7 @@ export class ProductComponent implements OnInit {
     this.product = value;
     this.coutProduit = this.product.cout;
     this.baseRevenu = this.product.revenu;
-    this.prochainPallier = this.product.palliers.pallier[0].seuil;
+    this.prochainPallier = this.product.palliers.pallier[0];
     if (this.product.quantite == 0){
       this.product.revenu = 0;
     }
@@ -144,21 +145,7 @@ export class ProductComponent implements OnInit {
     this.showProductPrice();
     this.calcMaxCanBuy();
     this.disableOnClick();
-    /* Unlocks */
-    /* Débloquer un pallier lorsque la quantité de produits requise est atteinte et déterminer le prochain pallier à atteindre pour ce produit */
-    /* Augmenter la vitesse de production du produit */
-    let palliersProduit = this.product.palliers.pallier;
-    for (let j = 0;j < palliersProduit.length; j++) {
-      if (this.product.quantite >= palliersProduit[this.i].seuil) {
-        palliersProduit[this.i].unlocked = true;
-        
-        if (palliersProduit[this.i].unlocked && palliersProduit[this.i].typeratio == "vitesse"){
-          this.product.vitesse = this.product.vitesse * palliersProduit[this.i].ratio;
-        }
-        this.i += 1;
-        this.prochainPallier = palliersProduit[this.i].seuil;
-      }
-    }
+    this.setUnlocks();
     this.service.putProduct(this.product);
   }
   showProductPrice() {
@@ -218,5 +205,29 @@ export class ProductComponent implements OnInit {
         }
         break;
     }
+  }  
+  /* Unlocks */
+  setUnlocks() {
+    /* Débloquer un pallier lorsque la quantité de produits requise est atteinte et déterminer le prochain pallier à atteindre pour ce produit */
+    let palliersProduit = this.product.palliers.pallier;
+    for (let j = 0;j < palliersProduit.length; j++) {
+      if (this.product.quantite >= palliersProduit[this.i].seuil) {
+        palliersProduit[this.i].unlocked = true;
+        /* Augmenter la vitesse de production du produit */
+        if (palliersProduit[this.i].unlocked && palliersProduit[this.i].typeratio == "vitesse"){
+          this.product.vitesse = this.product.vitesse * palliersProduit[this.i].ratio;
+        }
+        if (this.product.quantite >= this.prochainPallier.seuil) {
+          //Afficher un message de débloquage d'unlock
+          this.pallierMessage(this.product.name + " " + this.prochainPallier.typeratio + " x" + this.prochainPallier.ratio);
+        }
+        this.i += 1;
+        this.prochainPallier = palliersProduit[this.i];
+      }
+    }
+  }
+  //Affichage du message de passage de pallier
+  pallierMessage(message : string) : void { 
+    this.snackBar.open(message, "", { duration : 5000 })
   }
 }
