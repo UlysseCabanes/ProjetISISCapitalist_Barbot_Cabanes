@@ -56,7 +56,7 @@ export class ProductComponent implements OnInit {
     this.baseRevenu = this.product.revenu;
     this.prochainPallier = this.product.palliers.pallier[0].seuil;
     if (this.product.quantite == 0){
-      this.product.revenu =0;
+      this.product.revenu = 0;
     }
   }
 
