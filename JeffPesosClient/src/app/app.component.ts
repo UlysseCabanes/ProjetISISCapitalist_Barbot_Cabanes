@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { World, Pallier, Product } from './world';
 import { RestserviceService } from './restservice.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { InvokeMethodExpr } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +17,8 @@ export class AppComponent {
   qtmulti = "x1";
   money = 0;
   username = "";
-  badgeManagers = 0;
-  showManagers: boolean = false;
-  badgeAngels = 0;
-  showAngels: boolean = false;
+  badges = [0,0,0,0,0,0];
+  menuIndexes = [false,false,false,false,false,false];
 
   constructor(private service: RestserviceService, private snackBar: MatSnackBar) {
     this.server = service.getServer;
@@ -27,8 +26,7 @@ export class AppComponent {
     world => {
     this.world = world;
     //Mettre à jour la valeur des badges dès le chargement de la page
-    this.updateManagersBadges();
-    this.updateAngelsBadges();
+    this.updateBadges();
     this.username = localStorage.getItem("username") || 'Captain' + Math.floor(Math.random() * 10000);
     });
   }
@@ -44,10 +42,9 @@ export class AppComponent {
       //Dans le produit aussi
       this.world.products.product[manager.idcible-1].managerUnlocked = true;
       //Mise à jour de la valeur des badges
-      this.updateManagersBadges();
-      this.updateAngelsBadges();
+      this.updateBadges();
       //Afficher un message de confirmation d'engagement du manager
-      this.hireMessage("Vous avez engagé " + manager.name + " comme manager !");
+      this.showMessage("Vous avez engagé " + manager.name + " comme manager !");
 
       this.service.putManager(manager);
     } 
@@ -62,20 +59,29 @@ export class AppComponent {
       //Débloquer l'ange
       angel.unlocked = true;
       //Mise à jour de la valeur des badges
-      this.updateAngelsBadges();
-      this.updateManagersBadges();
+      this.updateBadges();
       //Afficher un message de confirmation d'achat de l'ange
-      this.buyAngelMessage("Vous avez acheté l'ange " + angel.name + " !");
+      this.showMessage("Vous avez acheté l'ange " + angel.name + " !");
     }
   }
 
-  //Affichage du message de confirmation d'engagement du manager
-  hireMessage(message : string) : void { 
-    this.snackBar.open(message, "", { duration : 5000 })
+  //Acheter un ange
+  buyUnlock(unlock: Pallier) {
+    //Si l'argent est suffisant
+    if (this.world.money >= unlock.seuil) {
+      //Décrémentation de l'argent
+      this.world.money -= unlock.seuil;
+      //Débloquer l'ange
+      unlock.unlocked = true;
+      //Mise à jour de la valeur des badges
+      this.updateBadges();
+      //Afficher un message de confirmation d'achat de l'ange
+      this.showMessage("Vous avez acheté l'unlock " + unlock.name + " !");
+    }
   }
 
-  //Affichage du message de confirmation d'achat de l'ange
-  buyAngelMessage(message : string) : void { 
+  //Affichage des messages
+  showMessage(message : string) : void { 
     this.snackBar.open(message, "", { duration : 5000 })
   }
 
@@ -85,40 +91,40 @@ export class AppComponent {
     this.world.money += p.revenu;
     
     //Mise à jour de la valeur des badges
-    this.updateManagersBadges();
-    this.updateAngelsBadges();
+    this.updateBadges();
   }
   onAchatDone(w : World){
     this.world.money = w.money;
     //Mise à jour de la valeur des badges
-    this.updateManagersBadges();
-    this.updateAngelsBadges();
+    this.updateBadges();
   }
   
-  //Mettre à jour le badge des managers
-  updateManagersBadges() {
-    //réinitialiser la valeur du badge
-    this.badgeManagers = 0;
-    //Parcourir les managers
-    for (let m of this.world.managers.pallier) {
-      //Vérifier si l'argent possédé dépasse le prix du manager
-      if (this.world.money >= m.seuil && !m.unlocked && this.world.products.product[m.idcible-1].quantite > 0) {
+  //Mettre à jour les badges
+  updateBadges() {
+    //Réinitialiser la valeur des badges
+    this.badges = [0,0,0,0,0,0];
+    //Parcourir les cash upgrades
+    for (let u of this.world.upgrades.pallier) {
+      //Vérifier si l'argent possédé dépasse le prix de l'ange
+      if (this.world.money >= u.seuil && !u.unlocked) {
         //Incrémenter la valeur du badge
-        this.badgeManagers += 1;
+        this.badges[1] += 1;
       }
     }
-  }
-
-  //Mettre à jour le badge des anges
-  updateAngelsBadges() {
-    //réinitialiser la valeur du badge
-    this.badgeAngels = 0;
     //Parcourir les anges
     for (let a of this.world.angelupgrades.pallier) {
       //Vérifier si l'argent possédé dépasse le prix de l'ange
       if (this.world.money >= a.seuil && !a.unlocked) {
         //Incrémenter la valeur du badge
-        this.badgeAngels += 1;
+        this.badges[2] += 1;
+      }
+    }
+    //Parcourir les managers
+    for (let m of this.world.managers.pallier) {
+      //Vérifier si l'argent possédé dépasse le prix du manager
+      if (this.world.money >= m.seuil && !m.unlocked && this.world.products.product[m.idcible-1].quantite > 0) {
+        //Incrémenter la valeur du badge
+        this.badges[3] += 1;
       }
     }
   }
@@ -142,8 +148,21 @@ export class AppComponent {
         break;
     }
   }
+
   onUsernameChanged() {
     localStorage.setItem("username", this.username);
     this.service.user = this.username;
+  }
+
+  //Menu
+  showMenu(nMenu: any) {
+    //Afficher ou masquer le menu souhaité
+    this.menuIndexes[nMenu] = !this.menuIndexes[nMenu];
+    //Masquer un autre menu potentiellement ouvert
+    for (let i = 0; i < this.menuIndexes.length; i++) {
+      if (i != nMenu) {
+        this.menuIndexes[i] = false;
+      }
+    }
   }
 }

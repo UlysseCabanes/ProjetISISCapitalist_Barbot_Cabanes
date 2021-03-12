@@ -22,10 +22,20 @@
 <div class="main">
     <div class="menu"> 
         <p class="menuTitle">Menu</p>
-        <button class="managersButton" mat-raised-button color="primary" [matBadge]="badgeManagers" 
-        [matBadgeHidden]="badgeManagers==0" (click)="showManagers = !showManagers" (click)="showAngels = false">Managers</button>
-        <button class="angelsButton" mat-raised-button color="primary" [matBadge]="badgeAngels" 
-        [matBadgeHidden]="badgeAngels==0" (click)="showAngels = !showAngels" (click)="showManagers = false">Angels</button>
+        <!--
+        <button class="unlocksButton" mat-raised-button color="primary" [matBadge]="badgeUnlocks" 
+        [matBadgeHidden]="badgeUnlocks==0" (click)="showUnlocks = !showUnlocks" (click)="showUnlocks = false">Unlocks</button>
+        -->
+        <button class="unlocksButton" mat-raised-button color="primary" [matBadge]="badges[1]" 
+        [matBadgeHidden]="badges[1]==0" (click)="showMenu(1)">Cash upgrades</button>
+        <button class="angelsButton" mat-raised-button color="primary" [matBadge]="badges[2]" 
+        [matBadgeHidden]="badges[2]==0" (click)="showMenu(2)">Angel upgrades</button>
+        <button class="managersButton" mat-raised-button color="primary" [matBadge]="badges[3]" 
+        [matBadgeHidden]="badges[3]==0" (click)="showMenu(3)">Managers</button>
+        <!--
+        <button class="unlocksButton" mat-raised-button color="primary" [matBadge]="badgeUnlocks" 
+        [matBadgeHidden]="badgeUnlocks==0" (click)="showUnlocks = !showUnlocks" (click)="showUnlocks = false">Investors</button>
+        -->
     </div>
     <div class="products">
         <div class="product col-md-6">
@@ -55,7 +65,55 @@
     </div>
 </div>
 
-<div *ngIf="showManagers" class="modal">
+<div *ngIf="menuIndexes[1]" class="modal">
+    <div>
+        <h1 class="title">Star Wars world angels</h1>
+    </div>
+    <div class="unlocksLayout">
+        <div *ngFor="let unlock of world.upgrades.pallier">
+            <div *ngIf="!unlock.unlocked" class="unlockLayout col-md-6">
+                <div>
+                    <div class="unlocksLogo"><img class="round" [attr.src]="server+unlock.logo" /> </div>
+                </div>
+                <div class="unlocksAttributes">
+                    <div class="unlockName"> {{unlock.name}} </div>
+                    <div class="unlockCible">{{ world.products.product[unlock.idcible-1].name }}</div>
+                    <div class="unlockCost"> {{unlock.seuil}} </div>
+                </div>
+                <button class="buyUnlockButton" (click)="buyUnlock(unlock)" [disabled]="unlock.seuil > world.money"
+                    [ngClass]="{'selectable' : (world.money >= unlock.seuil)}">Buy !</button>
+            </div>
+        </div>
+    </div>
+    <button class="closeButton" mat-raised-button color="primary"
+            (click)="showMenu(1)">Close</button>
+</div>
+
+<div *ngIf="menuIndexes[2]" class="modal">
+    <div>
+        <h1 class="title">Star Wars world angels</h1>
+    </div>
+    <div class="angelsLayout">
+        <div *ngFor="let angel of world.angelupgrades.pallier">
+            <div *ngIf="!angel.unlocked" class="angelLayout col-md-6">
+                <div>
+                    <div class="angelsLogo"><img class="round" [attr.src]="server+angel.logo" /> </div>
+                </div>
+                <div class="angelsAttributes">
+                    <div class="angelName"> {{angel.name}} </div>
+                    <div class="angelCible">All products</div>
+                    <div class="angelCost"> {{angel.seuil}} </div>
+                </div>
+                <button class="buyAngelButton" (click)="buyAngel(angel)" [disabled]="angel.seuil > world.money"
+                    [ngClass]="{'selectable' : (world.money >= angel.seuil)}">Buy !</button>
+            </div>
+        </div>
+    </div>
+    <button class="closeButton" mat-raised-button color="primary"
+            (click)="showMenu(2)">Close</button>
+</div>
+
+<div *ngIf="menuIndexes[3]" class="modal">
     <div>
         <h1 class="title">Star Wars world managers</h1>
     </div>
@@ -77,29 +135,5 @@
         </div>
     </div>
     <button class="closeButton" mat-raised-button color="primary"
-            (click)="showManagers = !showManagers">Close</button>
-</div>
-
-<div *ngIf="showAngels" class="modal">
-    <div>
-        <h1 class="title">Star Wars world angels</h1>
-    </div>
-    <div class="angelsLayout">
-        <div *ngFor="let angel of world.angelupgrades.pallier">
-            <div *ngIf="!angel.unlocked" class="angelLayout col-md-6">
-                <div>
-                    <div class="angelsLogo"><img class="round" [attr.src]="server+angel.logo" /> </div>
-                </div>
-                <div class="angelsAttributes">
-                    <div class="angelName"> {{angel.name}} </div>
-                    <div class="angelCible">All products</div>
-                    <div class="angelCost"> {{angel.seuil}} </div>
-                </div>
-                <button class="buyAngelButton" (click)="buyAngel(angel)" [disabled]="angel.seuil > world.money"
-                    [ngClass]="{'selectable' : (world.money >= angel.seuil)}">Buy !</button>
-            </div>
-        </div>
-    </div>
-    <button class="closeButton" mat-raised-button color="primary"
-            (click)="showAngels = !showAngels">Close</button>
+            (click)="showMenu(3)">Close</button>
 </div>

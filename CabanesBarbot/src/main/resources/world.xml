@@ -59,7 +59,7 @@ Star Wars World
     <product>
       <id>2</id>
       <name>Lightsaber</name>
-      <logo>icones/lightsaber.jpg</logo>
+      <logo>icones/lightSaber.jpg</logo>
       <cout>10</cout>
       <croissance>1.07</croissance>
       <revenu>3</revenu>
@@ -70,7 +70,7 @@ Star Wars World
       <palliers>
         <pallier>
           <name>pallierLightsaber1</name>
-          <logo>icones/lightsaber.jpg</logo>
+          <logo>icones/lightSaber.jpg</logo>
           <seuil>25</seuil>
           <idcible>2</idcible>
           <ratio>0.75</ratio>
@@ -79,7 +79,7 @@ Star Wars World
         </pallier>
         <pallier>
           <name>pallierLightsaber2</name>
-          <logo>icones/lightsaber.jpg</logo>
+          <logo>icones/lightSaber.jpg</logo>
           <seuil>50</seuil>
           <idcible>2</idcible>
           <ratio>0.50</ratio>
@@ -88,7 +88,7 @@ Star Wars World
         </pallier>
         <pallier>
           <name>pallierLightsaber3</name>
-          <logo>icones/lightsaber.jpg</logo>
+          <logo>icones/lightSaber.jpg</logo>
           <seuil>100</seuil>
           <idcible>2</idcible>
           <ratio>0.25</ratio>
@@ -281,7 +281,7 @@ Star Wars World
     <!-- Cash upgrade 1 for the blaster -->
     <pallier>
       <name>cashUpgradeBlaster1</name>
-      <logo>icones/blaster.jpeg</logo>
+      <logo>icones/blaster.jpg</logo>
       <seuil>1000</seuil>
       <idcible>1</idcible>
       <ratio>1.25</ratio>
@@ -291,7 +291,7 @@ Star Wars World
     <!-- Cash upgrade 2 for the blaster -->
     <pallier>
       <name>cashUpgradeBlaster2</name>
-      <logo>icones/blaster.jpeg</logo>
+      <logo>icones/blaster.jpg</logo>
       <seuil>1500</seuil>
       <idcible>1</idcible>
       <ratio>1.5</ratio>
@@ -301,7 +301,7 @@ Star Wars World
     <!-- Cash upgrade 3 for the blaster -->
     <pallier>
       <name>cashUpgradeBlaster3</name>
-      <logo>icones/blaster.jpeg</logo>
+      <logo>icones/blaster.jpg</logo>
       <seuil>2000</seuil>
       <idcible>1</idcible>
       <ratio>1.75</ratio>
@@ -311,7 +311,7 @@ Star Wars World
     <!-- Cash upgrade 1 for the lightsaber -->
     <pallier>
       <name>cashUpgradeLightsaber1</name>
-      <logo>icones/lightsaber.jpg'</logo>
+      <logo>icones/lightSaber.jpg</logo>
       <seuil>1000</seuil>
       <idcible>2</idcible>
       <ratio>1.25</ratio>
@@ -321,7 +321,7 @@ Star Wars World
     <!-- Cash upgrade 2 for the lightsaber -->
     <pallier>
       <name>cashUpgradeLightsaber2</name>
-      <logo>icones/lightsaber.jpg</logo>
+      <logo>icones/lightSaber.jpg</logo>
       <seuil>1500</seuil>
       <idcible>2</idcible>
       <ratio>1.5</ratio>
@@ -331,7 +331,7 @@ Star Wars World
     <!-- Cash upgrade 3 for the lightsaber -->
     <pallier>
       <name>cashUpgradeLightsaber3</name>
-      <logo>icones/lightsaber.jpg</logo>
+      <logo>icones/lightSaber.jpg</logo>
       <seuil>2000</seuil>
       <idcible>2</idcible>
       <ratio>1.75</ratio>

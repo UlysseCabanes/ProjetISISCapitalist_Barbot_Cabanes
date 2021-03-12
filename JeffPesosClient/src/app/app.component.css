@@ -55,7 +55,7 @@ button:enabled:hover {
 .modal { 
     position: fixed; /* reste en place */ 
     z-index: 2; /* au dessus du reste */ 
-    width: 1000px; /* largeur */ 
+    width: 850px; /* largeur */ 
     height: fit-content; /* hauteur */ 
     overflow: auto; /* barre de scroll si besoin */ 
     border: solid black 1px; 
@@ -78,7 +78,9 @@ button:enabled:hover {
     bottom: -10px; 
 }
 /* Menu */
-.managersButton, .angelsButton {
+.unlocksButton, 
+.angelsButton, 
+.managersButton {
     display:block;
     padding: 5px;
     margin-bottom: 15px;
@@ -94,11 +96,15 @@ button:enabled:hover {
 }
 
 /* Managers */
-.managersLayout, .angelsLayout {
+.unlocksLayout, 
+.angelsLayout, 
+.managersLayout {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.managerLayout, .angelLayout {
+.unlockLayout, 
+.angelLayout, 
+.managerLayout {
     display: flex;
     width: 400px;
     margin-top: 10px;
@@ -111,15 +117,21 @@ button:enabled:hover {
     border-radius: 50% 
 }
 /* Nom, produit cible et prix des managers */
-.managersAttributes, .angelsAttributes {
+.unlocksAttributes, 
+.angelsAttributes, 
+.managersAttributes {
     margin: auto;
 }
-.managerName, .managerCible, .managerCost, .angelName, .angelCible, .angelCost {
+.unlockName, .unlockCible, .unlockCost, 
+.angelName, .angelCible, .angelCost, 
+.managerName, .managerCible, .managerCost {
     margin: 0 auto 0 auto;
     width: fit-content;
 }
 /* Bouton d'engagement */
-.hireButton:enabled, .buyAngelButton:enabled {
+.buyUnlockButton:enabled,
+.buyAngelButton:enabled,
+.hireButton:enabled {
     margin: auto 0 auto 0;
     padding: 5px;
     cursor: pointer;
@@ -128,7 +140,9 @@ button:enabled:hover {
     color:white;
     box-shadow: 2px 2px 5px black;
 }
-.hireButton:disabled, .buyAngelButton:disabled {
+.buyUnlockButton:disabled,
+.buyAngelButton:disabled,
+.hireButton:disabled {
     margin: auto 0 auto 0;
     cursor: default;
     padding: 5px;
