@@ -22,11 +22,9 @@
 <div class="main">
     <div class="menu"> 
         <p class="menuTitle">Menu</p>
-        <!--
-        <button class="unlocksButton" mat-raised-button color="primary" [matBadge]="badgeUnlocks" 
-        [matBadgeHidden]="badgeUnlocks==0" (click)="showUnlocks = !showUnlocks" (click)="showUnlocks = false">Unlocks</button>
-        -->
-        <button class="unlocksButton" mat-raised-button color="primary" [matBadge]="badges[1]" 
+        <button class="unlocksButton" mat-raised-button color="primary" [matBadge]="badges[0]" 
+        [matBadgeHidden]="badges[0]==0" (click)="showMenu(0)" (click)="setNextUnlocks()">Unlocks</button>
+        <button class="cashUpgradesButton" mat-raised-button color="primary" [matBadge]="badges[1]" 
         [matBadgeHidden]="badges[1]==0" (click)="showMenu(1)">Cash upgrades</button>
         <button class="angelsButton" mat-raised-button color="primary" [matBadge]="badges[2]" 
         [matBadgeHidden]="badges[2]==0" (click)="showMenu(2)">Angel upgrades</button>
@@ -65,28 +63,51 @@
     </div>
 </div>
 
-<div *ngIf="menuIndexes[1]" class="modal">
+<div *ngIf="menuIndexes[0]" class="modal">
     <div>
-        <h1 class="title">Star Wars world angels</h1>
+        <h1 class="title">Star Wars world unlocks</h1>
     </div>
     <div class="unlocksLayout">
-        <div *ngFor="let unlock of world.upgrades.pallier">
-            <div *ngIf="!unlock.unlocked" class="unlockLayout col-md-6">
+        <div *ngFor="let unlock of this.nextUnlocks">
+            <div class="unlockLayout col-md-6">
                 <div>
                     <div class="unlocksLogo"><img class="round" [attr.src]="server+unlock.logo" /> </div>
                 </div>
                 <div class="unlocksAttributes">
                     <div class="unlockName"> {{unlock.name}} </div>
-                    <div class="unlockCible">{{ world.products.product[unlock.idcible-1].name }}</div>
                     <div class="unlockCost"> {{unlock.seuil}} </div>
+                    <div class="unlockCible">{{world.products.product[unlock.idcible-1].name}} {{unlock.typeratio}} x{{unlock.ratio}}</div>
+                    
                 </div>
-                <button class="buyUnlockButton" (click)="buyUnlock(unlock)" [disabled]="unlock.seuil > world.money"
-                    [ngClass]="{'selectable' : (world.money >= unlock.seuil)}">Buy !</button>
             </div>
         </div>
     </div>
     <button class="closeButton" mat-raised-button color="primary"
-            (click)="showMenu(1)">Close</button>
+            (click)="showMenu(0)">Close</button>
+</div>
+
+<div *ngIf="menuIndexes[1]" class="modal">
+    <div>
+        <h1 class="title">Star Wars world cash upgrades</h1>
+    </div>
+    <div class="cashUpgradesLayout">
+        <div *ngFor="let cashUpgrade of world.upgrades.pallier">
+            <div *ngIf="!cashUpgrade.unlocked" class="cashUpgradeLayout col-md-6">
+                <div>
+                    <div class="cashUpgradesLogo"><img class="round" [attr.src]="server+cashUpgrade.logo" /> </div>
+                </div>
+                <div class="cashUpgradesAttributes">
+                    <div class="cashUpgradeName"> {{cashUpgrade.name}} </div>
+                    <div class="cashUpgradeCible">{{world.products.product[cashUpgrade.idcible-1].name}}</div>
+                    <div class="cashUpgradeCost"> {{cashUpgrade.seuil}} </div>
+                </div>
+                <button class="buyCashUpgradeButton" (click)="buyCashUpgrade(cashUpgrade)" [disabled]="cashUpgrade.seuil > world.money"
+                    [ngClass]="{'selectable' : (world.money >= cashUpgrade.seuil)}">Buy !</button>
+            </div>
+        </div>
+    </div>
+    <button class="closeButton" mat-raised-button color="primary"
+            (click)="showMenu(0)">Close</button>
 </div>
 
 <div *ngIf="menuIndexes[2]" class="modal">
@@ -125,7 +146,7 @@
                 </div>
                 <div class="managersAttributes">
                     <div class="managerName"> {{ manager.name}} </div>
-                    <div class="managerCible"> {{ world.products.product[manager.idcible-1].name }} </div>
+                    <div class="managerCible"> {{world.products.product[manager.idcible-1].name}} </div>
                     <div class="managerCost"> {{ manager.seuil}} </div>
                 </div>
                 <button *ngIf="!manager.unlocked" class="hireButton" (click)="hireManager(manager)" [disabled]="manager.seuil > world.money || world.products.product[manager.idcible-1].quantite == 0"

@@ -17,8 +17,11 @@ export class AppComponent {
   qtmulti = "x1";
   money = 0;
   username = "";
+  //badges des boutons du menu
   badges = [0,0,0,0,0,0];
+  //Etat affiché (true) ou masqué (false) des sous-menus
   menuIndexes = [false,false,false,false,false,false];
+  nextUnlocks: [Pallier] = [new Pallier()];
 
   constructor(private service: RestserviceService, private snackBar: MatSnackBar) {
     this.server = service.getServer;
@@ -28,6 +31,7 @@ export class AppComponent {
     //Mettre à jour la valeur des badges dès le chargement de la page
     this.updateBadges();
     this.username = localStorage.getItem("username") || 'Captain' + Math.floor(Math.random() * 10000);
+    this.setNextUnlocks();
     });
   }
 
@@ -66,17 +70,17 @@ export class AppComponent {
   }
 
   //Acheter un ange
-  buyUnlock(unlock: Pallier) {
+  buyCashUpgrade(cashUpgrade: Pallier) {
     //Si l'argent est suffisant
-    if (this.world.money >= unlock.seuil) {
+    if (this.world.money >= cashUpgrade.seuil) {
       //Décrémentation de l'argent
-      this.world.money -= unlock.seuil;
+      this.world.money -= cashUpgrade.seuil;
       //Débloquer l'ange
-      unlock.unlocked = true;
+      cashUpgrade.unlocked = true;
       //Mise à jour de la valeur des badges
       this.updateBadges();
       //Afficher un message de confirmation d'achat de l'ange
-      this.showMessage("Vous avez acheté l'unlock " + unlock.name + " !");
+      this.showMessage("Vous avez acheté l'unlock " + cashUpgrade.name + " !");
     }
   }
 
@@ -162,6 +166,24 @@ export class AppComponent {
     for (let i = 0; i < this.menuIndexes.length; i++) {
       if (i != nMenu) {
         this.menuIndexes[i] = false;
+      }
+    }
+  }
+
+  //Créer une liste des prochains palliers (Unlocks) à atteindre pour chaque produit
+  setNextUnlocks() {
+    //Réinitialiser le tableau
+    this.nextUnlocks = [new Pallier()];
+    this.nextUnlocks.splice(0,1);
+    //Pour chaque produit, parcourir chaque palliers
+    for (let product of this.world.products.product) {
+      for (let unlock of product.palliers.pallier) {
+        if (unlock.unlocked == false) {
+          /* Dès qu'un pallier non débloqué est rencontré, 
+          l'ajouter au tableau et passer au produit suivant */
+          this.nextUnlocks.push(unlock);
+          break;
+        }
       }
     }
   }

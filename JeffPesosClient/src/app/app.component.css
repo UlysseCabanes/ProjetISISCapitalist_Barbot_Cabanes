@@ -79,6 +79,7 @@ button:enabled:hover {
 }
 /* Menu */
 .unlocksButton, 
+.cashUpgradesButton,
 .angelsButton, 
 .managersButton {
     display:block;
@@ -97,12 +98,14 @@ button:enabled:hover {
 
 /* Managers */
 .unlocksLayout, 
+.cashUpgradesLayout,
 .angelsLayout, 
 .managersLayout {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 .unlockLayout, 
+.cashUpgradeLayout,
 .angelLayout, 
 .managerLayout {
     display: flex;
@@ -118,11 +121,13 @@ button:enabled:hover {
 }
 /* Nom, produit cible et prix des managers */
 .unlocksAttributes, 
+.cashUpgradesAttributes,
 .angelsAttributes, 
 .managersAttributes {
     margin: auto;
 }
 .unlockName, .unlockCible, .unlockCost, 
+.cashUpgradeName, .cashUpgradeCible, .cashUpgradeCost, 
 .angelName, .angelCible, .angelCost, 
 .managerName, .managerCible, .managerCost {
     margin: 0 auto 0 auto;
@@ -130,6 +135,7 @@ button:enabled:hover {
 }
 /* Bouton d'engagement */
 .buyUnlockButton:enabled,
+.buyCashUpgradeButton:enabled,
 .buyAngelButton:enabled,
 .hireButton:enabled {
     margin: auto 0 auto 0;
@@ -141,6 +147,7 @@ button:enabled:hover {
     box-shadow: 2px 2px 5px black;
 }
 .buyUnlockButton:disabled,
+.buyCashUpgradeButton:disabled,
 .buyAngelButton:disabled,
 .hireButton:disabled {
     margin: auto 0 auto 0;

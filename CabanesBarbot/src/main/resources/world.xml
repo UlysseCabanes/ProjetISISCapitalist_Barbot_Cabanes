@@ -27,7 +27,7 @@ Star Wars World
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>pallierBlaster1</name>
+          <name>Blaster unlock 1</name>
           <logo>icones/blaster.jpg</logo>
           <seuil>25</seuil>
           <idcible>1</idcible>
@@ -36,7 +36,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallierBlaster2</name>
+          <name>Blaster unlock 2</name>
           <logo>icones/blaster.jpg</logo>
           <seuil>50</seuil>
           <idcible>1</idcible>
@@ -45,7 +45,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallierBlaster3</name>
+          <name>Blaster unlock 3</name>
           <logo>icones/blaster.jpg</logo>
           <seuil>100</seuil>
           <idcible>1</idcible>
@@ -69,7 +69,7 @@ Star Wars World
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>pallierLightsaber1</name>
+          <name>Lightsaber unlock 1</name>
           <logo>icones/lightSaber.jpg</logo>
           <seuil>25</seuil>
           <idcible>2</idcible>
@@ -78,7 +78,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallierLightsaber2</name>
+          <name>Lightsaber unlock 2</name>
           <logo>icones/lightSaber.jpg</logo>
           <seuil>50</seuil>
           <idcible>2</idcible>
@@ -87,7 +87,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallierLightsaber3</name>
+          <name>Lightsaber unlock 3</name>
           <logo>icones/lightSaber.jpg</logo>
           <seuil>100</seuil>
           <idcible>2</idcible>
@@ -111,7 +111,7 @@ Star Wars World
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>pallierCloneTrooper1</name>
+          <name>Clone trooper unlock 1</name>
           <logo>icones/cloneTrooper.jpg</logo>
           <seuil>25</seuil>
           <idcible>3</idcible>
@@ -120,7 +120,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallierCloneTrooper2</name>
+          <name>Clone trooper unlock 2</name>
           <logo>icones/cloneTrooper.jpg</logo>
           <seuil>50</seuil>
           <idcible>3</idcible>
@@ -129,7 +129,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallierCloneTrooper3</name>
+          <name>Clone trooper unlock 3</name>
           <logo>icones/cloneTrooper.jpg</logo>
           <seuil>100</seuil>
           <idcible>3</idcible>
@@ -153,7 +153,7 @@ Star Wars World
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>pallierXWing1</name>
+          <name>X-wing unlock 1</name>
           <logo>icones/x-wing.jpg</logo>
           <seuil>25</seuil>
           <idcible>4</idcible>
@@ -162,7 +162,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallierXWing2</name>
+          <name>X-wing unlock 2</name>
           <logo>icones/x-wing.jpg</logo>
           <seuil>50</seuil>
           <idcible>4</idcible>
@@ -171,10 +171,10 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallierXWing3</name>
+          <name>X-wing unlock 3</name>
           <logo>icones/x-wing.jpg</logo>
           <seuil>100</seuil>
-          <idcible>6</idcible>
+          <idcible>4</idcible>
           <ratio>0.25</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -195,7 +195,7 @@ Star Wars World
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>pallierStarDestroyer1</name>
+          <name>Star destroyer unlock 1</name>
           <logo>icones/starDestroyer.jpg</logo>
           <seuil>25</seuil>
           <idcible>5</idcible>
@@ -204,7 +204,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallierStarDestroyer2</name>
+          <name>Star destroyer unlock 2</name>
           <logo>icones/starDestroyer.jpg</logo>
           <seuil>50</seuil>
           <idcible>5</idcible>
@@ -213,7 +213,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallierStarDestroyer3</name>
+          <name>Star destroyer unlock 3</name>
           <logo>icones/starDestroyer.jpg</logo>
           <seuil>100</seuil>
           <idcible>5</idcible>
@@ -237,7 +237,7 @@ Star Wars World
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>pallierDeathStar1</name>
+          <name>Death Star unlock 1</name>
           <logo>icones/deathStar.jpg</logo>
           <seuil>25</seuil>
           <idcible>6</idcible>
@@ -246,7 +246,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallierDeathStar2</name>
+          <name>Death Star unlock 2</name>
           <logo>icones/deathStar.jpg</logo>
           <seuil>50</seuil>
           <idcible>6</idcible>
@@ -255,7 +255,7 @@ Star Wars World
           <unlocked>false</unlocked>
         </pallier>
         <pallier>
-          <name>pallierDeathStar3</name>
+          <name>Death Star unlock 3</name>
           <logo>icones/deathStar.jpg</logo>
           <seuil>100</seuil>
           <idcible>6</idcible>
