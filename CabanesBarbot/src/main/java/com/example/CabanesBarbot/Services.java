@@ -74,6 +74,7 @@ public class Services {
             double cout = product.getCout() * ((1 - Math.pow(product.getCroissance(), qtchange)) / (1 - product.getCroissance()));
             world.setMoney(world.getMoney() - cout);
             product.setQuantite(newproduct.getQuantite());
+            product.setCout(newproduct.getCout());
 
         } else {
             // initialiser product.timeleft à product.vitesse

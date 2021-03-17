@@ -80,8 +80,8 @@ export class ProductComponent implements OnInit {
       this.product.timeleft = this.product.vitesse;
       this.lastUpdate = Date.now();
     }
-    this.showProductPrice();
     this.calcMaxCanBuy();
+    this.showProductPrice();
     this.disableOnClick();
   }
   calcScore() {
@@ -142,8 +142,8 @@ export class ProductComponent implements OnInit {
     this._money -= this.totalAchat;
     this.world.money = this._money;
     this.notifyAchat.emit(this.world);
-    this.showProductPrice();
     this.calcMaxCanBuy();
+    this.showProductPrice();
     this.disableOnClick();
     this.setUnlocks();
     this.service.putProduct(this.product);
