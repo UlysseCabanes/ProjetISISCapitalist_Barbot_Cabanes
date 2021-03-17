@@ -56,7 +56,7 @@ button:enabled:hover {
     position: fixed; /* reste en place */ 
     z-index: 2; /* au dessus du reste */ 
     width: 850px; /* largeur */ 
-    height: fit-content; /* hauteur */ 
+    height: 600px; /* hauteur */ 
     overflow: auto; /* barre de scroll si besoin */ 
     border: solid black 1px; 
     top:10%; /* a 10% du haut */ 
@@ -81,7 +81,8 @@ button:enabled:hover {
 .unlocksButton, 
 .cashUpgradesButton,
 .angelsButton, 
-.managersButton {
+.managersButton,
+.investorsButton {
     display:block;
     padding: 5px;
     margin-bottom: 15px;

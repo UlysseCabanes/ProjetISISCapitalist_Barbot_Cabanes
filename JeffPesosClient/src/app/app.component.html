@@ -30,10 +30,8 @@
         [matBadgeHidden]="badges[2]==0" (click)="showMenu(2)">Angel upgrades</button>
         <button class="managersButton" mat-raised-button color="primary" [matBadge]="badges[3]" 
         [matBadgeHidden]="badges[3]==0" (click)="showMenu(3)">Managers</button>
-        <!--
-        <button class="unlocksButton" mat-raised-button color="primary" [matBadge]="badgeUnlocks" 
-        [matBadgeHidden]="badgeUnlocks==0" (click)="showUnlocks = !showUnlocks" (click)="showUnlocks = false">Investors</button>
-        -->
+        <button class="investorsButton" mat-raised-button color="primary" [matBadge]="badges[4]" 
+        [matBadgeHidden]="badges[4]==0" (click)="showMenu(4)">Investors</button>
     </div>
     <div class="products">
         <div class="product col-md-6">
