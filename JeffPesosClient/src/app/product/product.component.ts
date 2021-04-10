@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit {
   baseRevenu = 0;
   color: String = '';
   click : boolean = false;
-  prochainPallier: Pallier = new Pallier();
+  prochainPallier = 0;
   i = 0;
   constructor(private service : RestserviceService, private snackBar: MatSnackBar) {
 
@@ -55,7 +55,7 @@ export class ProductComponent implements OnInit {
     this.product = value;
     this.coutProduit = this.product.cout;
     this.baseRevenu = this.product.revenu;
-    this.prochainPallier = this.product.palliers.pallier[0];
+    this.prochainPallier = this.product.palliers.pallier[0].seuil;
     if (this.product.quantite == 0){
       this.product.revenu = 0;
     }
@@ -217,12 +217,12 @@ export class ProductComponent implements OnInit {
         if (palliersProduit[this.i].unlocked && palliersProduit[this.i].typeratio == "vitesse"){
           this.product.vitesse = this.product.vitesse * palliersProduit[this.i].ratio;
         }
-        if (this.product.quantite >= this.prochainPallier.seuil) {
+        if (this.product.quantite >= this.prochainPallier) {
           //Afficher un message de débloquage d'unlock
-          this.pallierMessage(this.product.name + " " + this.prochainPallier.typeratio + " x" + this.prochainPallier.ratio);
+          this.pallierMessage(this.product.name + " : " + palliersProduit[this.i].typeratio + " augmenté !");
         }
         this.i += 1;
-        this.prochainPallier = palliersProduit[this.i];
+        this.prochainPallier = palliersProduit[this.i].seuil;
       }
     }
   }
